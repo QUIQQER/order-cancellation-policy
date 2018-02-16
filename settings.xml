@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiqqer>
+    <settings>
+        <window name="ERP">
+            <title>
+                <locale group="quiqqer/erp" var="window.erp.title"/>
+            </title>
+
+            <params>
+                <icon>fa fa-sun-o</icon>
+            </params>
+
+            <categories>
+                <category name="order-cancellation-policy" index="3">
+                    <text>
+                        <locale group="quiqqer/order-cancellation-policy" var="window.erp.order.title"/>
+                    </text>
+                    <icon>fa fa-file-text-o</icon>
+
+
+                    <settings title="order-cancellation-policy" name="order-cancellation-policy">
+                        <title>
+                            <locale group="quiqqer/order-cancellation-policy" var="setting.settings.title"/>
+                        </title>
+
+                        <input type="hidden"
+                               data-qui="package/quiqqer/order-cancellation-policy/bin/backend/controls/AreaSettings"
+                        >
+                            <text>
+                                <locale group="quiqqer/order-cancellation-policy" var="areas.settings.title"/>
+                            </text>
+                        </input>
+                    </settings>
+
+                </category>
+            </categories>
+        </window>
+    </settings>
+</quiqqer>

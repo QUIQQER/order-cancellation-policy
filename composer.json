@@ -3,7 +3,7 @@
   "type": "quiqqer-module",
   "description": "QUIQQER ERP Order Cancellation Policy",
   "version": "dev-master",
-  "license": "",
+  "license": "GPLv3",
   "authors": [
     {
       "name": "Henning Leutz",
@@ -19,7 +19,9 @@
   "require": {
     "php": ">=5.3",
     "quiqqer/quiqqer": "*@dev",
-    "quiqqer/order": "*"
+    "quiqqer/order": "*",
+    "quiqqer/areas": "*",
+    "quiqqer/erp": "*"
   },
   "autoload": {
     "psr-4": {

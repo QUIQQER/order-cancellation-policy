@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locales>
+
+    <groups name="quiqqer/order-cancellation-policy" datatype="php,js">
+        <locale name="package.title">
+            <de><![CDATA[QUIQQER - Shop - Widerrufsbelehrung]]></de>
+            <en><![CDATA[QUIQQER - Shop - Cancellation policy]]></en>
+        </locale>
+
+        <locale name="window.erp.order.title">
+            <de><![CDATA[Widerrufsbelehrung]]></de>
+            <en><![CDATA[Cancellation policy]]></en>
+        </locale>
+
+        <locale name="setting.settings.title">
+            <de><![CDATA[Widerrufsbelehrung]]></de>
+            <en><![CDATA[Cancellation policy]]></en>
+        </locale>
+        <locale name="areas.settings.title">
+            <de><![CDATA[Für welche Zonen möchten Sie die Widerrufsbelehrung aktivieren?]]></de>
+            <en><![CDATA[For which areas would you like to activate the cancellation policy?]]></en>
+        </locale>
+    </groups>
+
+</locales>

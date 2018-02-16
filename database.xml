@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <global>
+        <table name="areas">
+            <field type="INT(1)">ocp</field>
+        </table>
+    </global>
+</database>
