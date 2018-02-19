@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<events>
+    <event
+            on="onQuiqqerOrderOrderProcessCheckoutOutput"
+            fire="\QUI\ERP\Order\CancellationPolicy\EventHandling::onQuiqqerOrderOrderProcessCheckoutOutput"
+    />
+</events>

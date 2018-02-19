@@ -20,6 +20,15 @@
             <de><![CDATA[Für welche Zonen möchten Sie die Widerrufsbelehrung aktivieren?]]></de>
             <en><![CDATA[For which areas would you like to activate the cancellation policy?]]></en>
         </locale>
+
+        <locale name="ordering.step.checkout.checkoutAcceptText">
+            <de><![CDATA[
+                Ich habe die [terms_and_conditions] und die [revocation] gelesen und akzeptiere sie.
+            ]]></de>
+            <en><![CDATA[
+                I have read the [terms_and_conditions] and the [revocation] and accept it.
+            ]]></en>
+        </locale>
     </groups>
 
 </locales>
