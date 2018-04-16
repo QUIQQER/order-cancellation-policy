@@ -1,5 +1,6 @@
 /**
  * @module package/quiqqer/order-cancellation-policy/controls/AreaSettings
+ * @author www.pcsg.de (Henning Leutz)
  */
 define('package/quiqqer/order-cancellation-policy/bin/backend/controls/AreaSettings', [
 
@@ -141,11 +142,11 @@ define('package/quiqqer/order-cancellation-policy/bin/backend/controls/AreaSetti
                     width    : 50
                 }, {
                     header   : QUILocale.get('quiqqer/areas', 'area.grid.areaname.title'),
-                    dataIndex: 'text',
+                    dataIndex: 'title',
                     dataType : 'string',
                     width    : 200
                 }, {
-                    dataIndex: 'status',
+                    dataIndex: 'ocp',
                     dataType : 'number',
                     hidden   : true
                 }],
@@ -176,7 +177,6 @@ define('package/quiqqer/order-cancellation-policy/bin/backend/controls/AreaSetti
 
             this.refresh();
         },
-
 
         /**
          * event : on resize

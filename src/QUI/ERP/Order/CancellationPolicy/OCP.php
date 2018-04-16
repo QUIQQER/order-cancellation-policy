@@ -8,6 +8,7 @@ namespace QUI\ERP\Order\CancellationPolicy;
 
 use QUI;
 use QUI\ERP\Areas\Area;
+use QUI\ERP\Areas\Handler;
 
 /**
  * Class OCP
@@ -54,9 +55,31 @@ class OCP
      */
     public static function getList()
     {
-        return QUI::getDataBase()->fetch([
+        $Areas  = Handler::getInstance();
+        $result = [];
+
+        $list = QUI::getDataBase()->fetch([
             'from' => self::table()
         ]);
+
+        foreach ($list as $entry) {
+            try {
+                /* @var $Area Area */
+                $Area = $Areas->getChild($entry['id']);
+
+                $data = [
+                    'id'    => $Area->getId(),
+                    'title' => $Area->getTitle(),
+                    'ocp'   => (int)$entry['ocp']
+                ];
+
+                $result[] = $data;
+            } catch (QUI\Exception $Exception) {
+                QUI\System\Log::writeException($Exception);
+            }
+        }
+
+        return $result;
     }
 
     /**
