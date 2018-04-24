@@ -23,7 +23,18 @@ class EventHandling
     public static function onQuiqqerOrderOrderProcessCheckoutOutput(AbstractOrderingStep $Step, &$text)
     {
         /* @var $Step QUI\ERP\Order\Controls\OrderProcess\Checkout */
-        $Address = $Step->getOrder()->getInvoiceAddress();
+        $Address  = $Step->getOrder()->getInvoiceAddress();
+        $Customer = $Step->getOrder()->getCustomer();
+
+        try {
+            $User = QUI::getUsers()->get($Customer->getId());
+
+            if ($User->isCompany()) {
+                return;
+            }
+        } catch (QUI\Exception $Exception) {
+            QUI\System\Log::writeDebugException($Exception);
+        }
 
         try {
             $Country = $Address->getCountry();
