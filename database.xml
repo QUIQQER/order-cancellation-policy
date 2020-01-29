@@ -2,7 +2,11 @@
 <database>
     <global>
         <table name="areas">
+            <field type="INT(10) NOT NULL PRIMARY KEY">id</field>
             <field type="INT(1) DEFAULT 0">ocp</field>
+
+            <primary>id</primary>
+            <auto_increment>id</auto_increment>
         </table>
     </global>
 </database>
