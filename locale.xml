@@ -6,6 +6,22 @@
             <de><![CDATA[QUIQQER - Shop - Widerrufsbelehrung]]></de>
             <en><![CDATA[QUIQQER - Shop - Cancellation policy]]></en>
         </locale>
+        <locale name="package.description">
+            <de><![CDATA[
+            Dieses Modul ist für Firmen in Europa, die an Privatkunden verkaufen.
+            Mit diesem Modul ist es möglich, eine Widerrufsbelehrung für bestimmte Zonen anzugeben.
+
+            Die Widerrufsbelehrung ist eine Belehrung über das Widerrufsrecht eines Verbrauchers bei bestimmten Verbraucherverträgen.
+            ]]></de>
+            <en><![CDATA[
+            This module is for shops in Europe that sell to private customers.
+            With this module it is possible to indicate a cancellation policy for certain areas.
+
+
+            The revocation instruction is a instruction about the right of revocation
+            of a consumer with certain consumer contracts.
+            ]]></en>
+        </locale>
 
         <locale name="window.erp.order.title">
             <de><![CDATA[Widerrufsbelehrung]]></de>
