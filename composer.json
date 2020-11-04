@@ -3,6 +3,7 @@
   "type": "quiqqer-module",
   "description": "This module is for shops in Europe that sell to private customers. With this module it is possible to indicate a cancellation policy for certain areas.",
   "license": "GPL-3.0+",
+  "version": "1.0.0",
   "authors": [
     {
       "name": "Henning Leutz",
