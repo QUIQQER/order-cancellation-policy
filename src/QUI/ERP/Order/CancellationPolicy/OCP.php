@@ -43,7 +43,7 @@ class OCP
             'limit' => 1
         ]);
 
-        if (!isset($result[0])) {
+        if (!isset($result[0]) || !isset($result[0]['ocp'])) {
             return 0;
         }
 
