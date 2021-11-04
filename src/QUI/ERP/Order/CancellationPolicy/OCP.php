@@ -67,6 +67,10 @@ class OCP
                 /* @var $Area Area */
                 $Area = $Areas->getChild($entry['id']);
 
+                if (!isset($entry['ocp'])) {
+                    $entry['ocp'] = 0;
+                }
+
                 $data = [
                     'id'    => $Area->getId(),
                     'title' => $Area->getTitle(),
@@ -89,7 +93,7 @@ class OCP
      */
     public static function activate($areaId)
     {
-// @todo permissions
+        // @todo permissions
 
         QUI::getDataBase()->update(
             self::table(),
@@ -105,7 +109,7 @@ class OCP
      */
     public static function deactivate($areaId)
     {
-// @todo permissions
+        // @todo permissions
 
         QUI::getDataBase()->update(
             self::table(),
