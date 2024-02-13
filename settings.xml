@@ -11,7 +11,7 @@
             </params>
 
             <categories>
-                <category name="order-cancellation-policy" index="3">
+                <category name="order-cancellation-policy">
                     <text>
                         <locale group="quiqqer/order-cancellation-policy" var="window.erp.order.title"/>
                     </text>
