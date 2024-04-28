@@ -1,5 +1,5 @@
 {
-  "name": "quiqqer\/order-cancellation-policy",
+  "name": "quiqqer/order-cancellation-policy",
   "type": "quiqqer-module",
   "description": "This module is for shops in Europe that sell to private customers. With this module it is possible to indicate a cancellation policy for certain areas.",
   "license": "GPL-3.0+",
@@ -7,25 +7,25 @@
     {
       "name": "Henning Leutz",
       "email": "support@pcsg.de",
-      "homepage": "http:\/\/www.pcsg.de",
+      "homepage": "https://www.pcsg.de",
       "role": "Developer"
     }
   ],
   "support": {
     "email": "support@pcsg.de",
-    "url": "http:\/\/www.pcsg.de"
+    "url": "https://www.pcsg.de"
   },
   "require": {
-    "php": ">=5.3",
-    "quiqqer\/quiqqer": "*@dev",
-    "quiqqer\/order": "*",
-    "quiqqer\/areas": "*",
-    "quiqqer\/erp": "*"
+    "php": "^2",
+    "quiqqer/core": "^2",
+    "quiqqer/order": "*",
+    "quiqqer/areas": "*",
+    "quiqqer/erp": "*"
   },
   "autoload": {
     "psr-4": {
-      "QUI\\ERP\\Order\\": "src\/QUI\/ERP\/Order",
-      "QUITests\\ERP\\Order\\": "tests\/QUITests\/ERP\/Order"
+      "QUI\\ERP\\Order\\": "src/QUI/ERP/Order",
+      "QUITests\\ERP\\Order\\": "tests/QUITests/ERP/Order"
     }
   }
 }
