@@ -20,14 +20,14 @@ class EventHandling
      * @param AbstractOrderingStep $Step
      * @param $text
      */
-    public static function onQuiqqerOrderOrderProcessCheckoutOutput(AbstractOrderingStep $Step, &$text)
+    public static function onQuiqqerOrderOrderProcessCheckoutOutput(AbstractOrderingStep $Step, &$text): void
     {
         /* @var $Step QUI\ERP\Order\Controls\OrderProcess\Checkout */
-        $Address  = $Step->getOrder()->getInvoiceAddress();
+        $Address = $Step->getOrder()->getInvoiceAddress();
         $Customer = $Step->getOrder()->getCustomer();
 
         try {
-            $User = QUI::getUsers()->get($Customer->getId());
+            $User = QUI::getUsers()->get($Customer->getUUID());
 
             if ($User->isCompany()) {
                 return;
@@ -38,7 +38,7 @@ class EventHandling
 
         try {
             $Country = $Address->getCountry();
-        } catch (QUI\Exception $exception) {
+        } catch (QUI\Exception) {
             return;
         }
 
@@ -57,7 +57,7 @@ class EventHandling
             'ordering.step.checkout.checkoutAcceptText',
             [
                 'terms_and_conditions' => $Step->getLinkOf('terms_and_conditions'),
-                'revocation'           => $Step->getLinkOf('revocation')
+                'revocation' => $Step->getLinkOf('revocation')
             ]
         );
     }
