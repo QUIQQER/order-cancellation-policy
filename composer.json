@@ -16,11 +16,11 @@
     "url": "https://www.pcsg.de"
   },
   "require": {
-    "php": "^2",
+    "php": "^8",
     "quiqqer/core": "^2",
-    "quiqqer/order": "*",
-    "quiqqer/areas": "*",
-    "quiqqer/erp": "*"
+    "quiqqer/order": "^2",
+    "quiqqer/areas": "^2",
+    "quiqqer/erp": "^3.2"
   },
   "autoload": {
     "psr-4": {
