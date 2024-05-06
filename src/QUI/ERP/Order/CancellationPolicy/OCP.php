@@ -9,6 +9,7 @@ namespace QUI\ERP\Order\CancellationPolicy;
 use QUI;
 use QUI\ERP\Areas\Area;
 use QUI\ERP\Areas\Handler;
+use QUI\Exception;
 
 /**
  * Class OCP
@@ -22,7 +23,7 @@ class OCP
      *
      * @return string
      */
-    protected static function table()
+    protected static function table(): string
     {
         return QUI::getDBTableName('areas');
     }
@@ -31,17 +32,21 @@ class OCP
      * Checks if the area has a cancellation policy or not
      *
      * @param Area $Area
-     * @return bool
+     * @return bool|int
      */
-    public static function hasAreaCancellationPolicy(Area $Area)
+    public static function hasAreaCancellationPolicy(Area $Area): bool|int
     {
-        $result = QUI::getDataBase()->fetch([
-            'from'  => self::table(),
-            'where' => [
-                'id' => $Area->getId()
-            ],
-            'limit' => 1
-        ]);
+        try {
+            $result = QUI::getDataBase()->fetch([
+                'from' => self::table(),
+                'where' => [
+                    'id' => $Area->getId()
+                ],
+                'limit' => 1
+            ]);
+        } catch (Exception) {
+            return 0;
+        }
 
         if (!isset($result[0]) || !isset($result[0]['ocp'])) {
             return 0;
@@ -53,14 +58,18 @@ class OCP
     /**
      * @return array
      */
-    public static function getList()
+    public static function getList(): array
     {
-        $Areas  = Handler::getInstance();
+        $Areas = Handler::getInstance();
         $result = [];
 
-        $list = QUI::getDataBase()->fetch([
-            'from' => self::table()
-        ]);
+        try {
+            $list = QUI::getDataBase()->fetch([
+                'from' => self::table()
+            ]);
+        } catch (Exception) {
+            return [];
+        }
 
         foreach ($list as $entry) {
             try {
@@ -72,13 +81,13 @@ class OCP
                 }
 
                 $data = [
-                    'id'    => $Area->getId(),
+                    'id' => $Area->getId(),
                     'title' => $Area->getTitle(),
-                    'ocp'   => (int)$entry['ocp']
+                    'ocp' => (int)$entry['ocp']
                 ];
 
                 $result[] = $data;
-            } catch (QUI\Exception $Exception) {
+            } catch (Exception $Exception) {
                 QUI\System\Log::writeException($Exception);
             }
         }
@@ -89,9 +98,10 @@ class OCP
     /**
      * Activate order cancellation policy for the area
      *
-     * @param $areaId
+     * @param int|string $areaId
+     * @throws QUI\Database\Exception
      */
-    public static function activate($areaId)
+    public static function activate(int|string $areaId): void
     {
         // @todo permissions
 
@@ -105,9 +115,10 @@ class OCP
     /**
      * Deactivate order cancellation policy for the area
      *
-     * @param $areaId
+     * @param string|int $areaId
+     * @throws QUI\Database\Exception
      */
-    public static function deactivate($areaId)
+    public static function deactivate(string|int $areaId): void
     {
         // @todo permissions
 
