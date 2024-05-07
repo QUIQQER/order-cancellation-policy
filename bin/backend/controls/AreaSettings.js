@@ -124,7 +124,7 @@ define('package/quiqqer/order-cancellation-policy/bin/backend/controls/AreaSetti
             this.$Grid = new Grid(this.$Container, {
                 buttons    : [{
                     name    : 'status',
-                    text    : QUILocale.get('quiqqer/quiqqer', 'activate'),
+                    text    : QUILocale.get('quiqqer/core', 'activate'),
                     disabled: true,
                     events  : {
                         click: statusClick
@@ -165,13 +165,13 @@ define('package/quiqqer/order-cancellation-policy/bin/backend/controls/AreaSetti
 
                 // is activated, then show button deactivate
                 if (sel.status) {
-                    Status.setAttribute('text', QUILocale.get('quiqqer/quiqqer', 'deactivate'));
+                    Status.setAttribute('text', QUILocale.get('quiqqer/core', 'deactivate'));
                     Status.enable();
                     return;
                 }
 
                 // is deactivated, then show button activate
-                Status.setAttribute('text', QUILocale.get('quiqqer/quiqqer', 'activate'));
+                Status.setAttribute('text', QUILocale.get('quiqqer/core', 'activate'));
                 Status.enable();
             });
 
