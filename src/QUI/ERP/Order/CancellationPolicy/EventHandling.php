@@ -32,7 +32,7 @@ class EventHandling
     }
 
     public static function onQuiqqerOrderSimpleCheckoutOutput(
-        QUI\ERP\Order\SimpleCheckout\Checkout $Checkout,
+        QUI\ERP\Order\SimpleCheckout\Checkout $Checkout, // @phpstan-ignore-line
         &$text
     ): void {
         try {
