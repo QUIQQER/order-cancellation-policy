@@ -4,4 +4,8 @@
             on="onQuiqqerOrderOrderProcessCheckoutOutput"
             fire="\QUI\ERP\Order\CancellationPolicy\EventHandling::onQuiqqerOrderOrderProcessCheckoutOutput"
     />
+    <event
+            on="onQuiqqerOrderSimpleCheckoutOutput"
+            fire="\QUI\ERP\Order\CancellationPolicy\EventHandling::onQuiqqerOrderSimpleCheckoutOutput"
+    />
 </events>

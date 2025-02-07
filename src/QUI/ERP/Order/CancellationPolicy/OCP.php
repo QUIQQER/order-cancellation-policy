@@ -34,7 +34,7 @@ class OCP
      * @param Area $Area
      * @return bool|int
      */
-    public static function hasAreaCancellationPolicy(Area $Area): bool|int
+    public static function hasAreaCancellationPolicy(Area $Area): bool | int
     {
         try {
             $result = QUI::getDataBase()->fetch([
@@ -73,7 +73,6 @@ class OCP
 
         foreach ($list as $entry) {
             try {
-                /* @var $Area Area */
                 $Area = $Areas->getChild($entry['id']);
 
                 if (!isset($entry['ocp'])) {
@@ -82,7 +81,7 @@ class OCP
 
                 $data = [
                     'id' => $Area->getId(),
-                    'title' => $Area->getTitle(),
+                    'title' => method_exists($Area, 'getTitle') ? $Area->getTitle() : '',
                     'ocp' => (int)$entry['ocp']
                 ];
 
@@ -101,7 +100,7 @@ class OCP
      * @param int|string $areaId
      * @throws QUI\Database\Exception
      */
-    public static function activate(int|string $areaId): void
+    public static function activate(int | string $areaId): void
     {
         // @todo permissions
 
@@ -118,7 +117,7 @@ class OCP
      * @param string|int $areaId
      * @throws QUI\Database\Exception
      */
-    public static function deactivate(string|int $areaId): void
+    public static function deactivate(string | int $areaId): void
     {
         // @todo permissions
 
