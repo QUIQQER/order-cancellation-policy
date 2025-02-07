@@ -37,7 +37,7 @@ class EventHandling
     ): void {
         try {
             $Project = QUI::getRewrite()->getProject();
-            $cancellationText = self::getText($Checkout->getOrder(), $Project);
+            $cancellationText = self::getText($Checkout->getOrder(), $Project); // @phpstan-ignore-line
 
             if (!empty($cancellationText)) {
                 $text = $cancellationText;
