@@ -54,8 +54,13 @@ class EventHandling
         ]);
 
         /* @var $Step QUI\ERP\Order\Controls\OrderProcess\Checkout */
-        $Address = $Order->getInvoiceAddress();
-        $Customer = $Order->getCustomer();
+        if ($Order) {
+            $Address = $Order->getInvoiceAddress();
+            $Customer = $Order->getCustomer();
+        } else {
+            $Address = QUI::getUserBySession()->getStandardAddress();
+            $Customer = QUI::getUserBySession();
+        }
 
         try {
             $User = QUI::getUsers()->get($Customer->getUUID());
