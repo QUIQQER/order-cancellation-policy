@@ -237,5 +237,4 @@ class CancellationFormHelper
     ): bool {
         return trim($value) === '[' . $group . '] ' . $var;
     }
-
 }
