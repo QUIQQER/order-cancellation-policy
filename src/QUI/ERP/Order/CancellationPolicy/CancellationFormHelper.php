@@ -8,6 +8,8 @@ use QUI\ERP\Utils\Sites as ERPSites;
 use function date;
 use function class_exists;
 use function is_string;
+use function rawurlencode;
+use function str_contains;
 use function strtotime;
 use function trim;
 
@@ -233,19 +235,7 @@ class CancellationFormHelper
             return '';
         }
 
-        $orderDate = trim($_GET['orderDate']);
-
-        if ($orderDate === '') {
-            return '';
-        }
-
-        $timestamp = strtotime($orderDate);
-
-        if (!$timestamp) {
-            return '';
-        }
-
-        return date('Y-m-d', $timestamp);
+        return self::normalizeOrderDateForRequest($_GET['orderDate']);
     }
 
     /**
@@ -297,6 +287,41 @@ class CancellationFormHelper
         }
 
         return $result;
+    }
+
+    public static function normalizeOrderDateForRequest(string $orderDate): string
+    {
+        $orderDate = trim($orderDate);
+
+        if ($orderDate === '') {
+            return '';
+        }
+
+        $timestamp = strtotime($orderDate);
+
+        if (!$timestamp) {
+            return '';
+        }
+
+        return date('Y-m-d', $timestamp);
+    }
+
+    public static function buildCancellationFormUrl(
+        string $baseUrl,
+        string $orderNo,
+        string $orderDate = ''
+    ): string {
+        $url = $baseUrl;
+        $url .= str_contains($url, '?') ? '&' : '?';
+        $url .= 'orderNo=' . rawurlencode($orderNo);
+
+        $normalizedOrderDate = self::normalizeOrderDateForRequest($orderDate);
+
+        if ($normalizedOrderDate !== '') {
+            $url .= '&orderDate=' . rawurlencode($normalizedOrderDate);
+        }
+
+        return $url;
     }
 
     public static function getProjectFromAjax(?string $project): ?QUI\Projects\Project

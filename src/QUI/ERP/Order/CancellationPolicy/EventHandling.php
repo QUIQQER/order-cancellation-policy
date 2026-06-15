@@ -12,11 +12,6 @@ use QUI\ERP\Order\Controls\AbstractOrderingStep;
 use QUI\ERP\Order\OrderView;
 use QUI\Smarty\Collector;
 
-use function date;
-use function rawurlencode;
-use function str_contains;
-use function strtotime;
-
 /**
  * Class EventHandling
  *
@@ -176,19 +171,12 @@ class EventHandling
             'quiqqer/order-cancellation-policy',
             'frontendUsers.order.footer.cancellationForm.link'
         );
-        $url = $CancellationFormSite->getUrlRewritten();
-        $url .= str_contains($url, '?') ? '&' : '?';
-        $url .= 'orderNo=' . rawurlencode($Order->getPrefixedId());
-
         $orderData = $Order->toArray();
-
-        if (!empty($orderData['cDate'])) {
-            $timestamp = strtotime((string)$orderData['cDate']);
-
-            if ($timestamp) {
-                $url .= '&orderDate=' . rawurlencode(date('Y-m-d', $timestamp));
-            }
-        }
+        $url = CancellationFormHelper::buildCancellationFormUrl(
+            $CancellationFormSite->getUrlRewritten(),
+            $Order->getPrefixedId(),
+            (string)($orderData['cDate'] ?? '')
+        );
 
         return '<div class="quiqqer-order-profile-orders-order__group '
             . 'quiqqer-order-profile-orders-order-footer-cancellationForm">'
