@@ -8,4 +8,8 @@
             on="onQuiqqerOrderSimpleCheckoutOutput"
             fire="\QUI\ERP\Order\CancellationPolicy\EventHandling::onQuiqqerOrderSimpleCheckoutOutput"
     />
+    <event
+            on="onQuiqqer::order::frontendUsers::order::footer::end"
+            fire="\QUI\ERP\Order\CancellationPolicy\EventHandling::templateFrontendUserOrderFooterEnd"
+    />
 </events>

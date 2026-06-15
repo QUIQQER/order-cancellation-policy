@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quiqqer>
     <settings>
+        <config>
+            <section name="frontend">
+                <conf name="mailTo">
+                    <type>string</type>
+                </conf>
+                <conf name="useCaptcha">
+                    <type>bool</type>
+                    <defaultvalue>1</defaultvalue>
+                </conf>
+            </section>
+        </config>
+
         <window name="ERP">
             <title>
                 <locale group="quiqqer/erp" var="window.erp.title"/>
@@ -29,6 +41,60 @@
                             <text>
                                 <locale group="quiqqer/order-cancellation-policy" var="areas.settings.title"/>
                             </text>
+                        </input>
+                    </settings>
+
+                    <settings title="frontend_form" name="frontend_form">
+                        <title>
+                            <locale group="quiqqer/order-cancellation-policy" var="settings.frontend.title"/>
+                        </title>
+
+                        <input conf="frontend.mailTo" type="text">
+                            <text>
+                                <locale group="quiqqer/order-cancellation-policy" var="settings.frontend.mailTo.title"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/order-cancellation-policy" var="settings.frontend.mailTo.description"/>
+                            </description>
+                        </input>
+
+                        <input conf="frontend.useCaptcha" type="checkbox">
+                            <text>
+                                <locale group="quiqqer/order-cancellation-policy" var="settings.frontend.useCaptcha.title"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/order-cancellation-policy" var="settings.frontend.useCaptcha.description"/>
+                            </description>
+                        </input>
+
+                        <input type="hidden"
+                               data-qui="package/quiqqer/translator/bin/controls/UpdateContent"
+                               data-qui-options-group="quiqqer/order-cancellation-policy"
+                               data-qui-options-package="quiqqer/order-cancellation-policy"
+                               data-qui-options-var="frontend.cancellationForm.introText"
+                               data-qui-options-html="1"
+                               data-qui-options-createIfNotExists="1">
+                            <text>
+                                <locale group="quiqqer/order-cancellation-policy" var="settings.frontend.introText.title"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/order-cancellation-policy" var="settings.frontend.introText.description"/>
+                            </description>
+                        </input>
+
+                        <input type="hidden"
+                               data-qui="package/quiqqer/translator/bin/controls/UpdateContent"
+                               data-qui-options-group="quiqqer/order-cancellation-policy"
+                               data-qui-options-package="quiqqer/order-cancellation-policy"
+                               data-qui-options-var="frontend.cancellationForm.successText"
+                               data-qui-options-html="1"
+                               data-qui-options-createIfNotExists="1">
+                            <text>
+                                <locale group="quiqqer/order-cancellation-policy" var="settings.frontend.successText.title"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/order-cancellation-policy" var="settings.frontend.successText.description"/>
+                            </description>
                         </input>
                     </settings>
 

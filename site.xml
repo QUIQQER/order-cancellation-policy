@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+
+    <types>
+        <type type="types/cancellationForm" icon="fa fa-file-text-o">
+            <locale group="quiqqer/order-cancellation-policy" var="admin.types.cancellationForm"/>
+            <desc>
+                <locale group="quiqqer/order-cancellation-policy" var="admin.types.cancellationForm.description"/>
+            </desc>
+
+        </type>
+    </types>
+
+</site>

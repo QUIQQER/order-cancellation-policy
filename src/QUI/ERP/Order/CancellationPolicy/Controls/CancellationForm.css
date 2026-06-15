@@ -1,0 +1,84 @@
+.quiqqer-order-cancellation-policy-cancellationForm {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.quiqqer-order-cancellation-policy-cancellationForm [hidden] {
+    display: none !important;
+}
+
+.quiqqer-order-cancellation-policy-cancellationForm__form {
+    display: grid;
+    gap: 1rem;
+}
+
+.quiqqer-order-cancellation-policy-cancellationForm__successDetails {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.quiqqer-order-cancellation-policy-cancellationForm__successTitle {
+    margin: 0;
+}
+
+.quiqqer-order-cancellation-policy-cancellationForm__successHint {
+    margin: 0;
+    max-width: 42rem;
+}
+
+.quiqqer-order-cancellation-policy-cancellationForm__successMeta {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.quiqqer-order-cancellation-policy-cancellationForm__successActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.quiqqer-order-cancellation-policy-cancellationForm__successText > :last-child {
+    margin-bottom: 0;
+}
+
+.quiqqer-order-cancellation-policy-cancellationForm__grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.quiqqer-order-cancellation-policy-cancellationForm__field {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.quiqqer-order-cancellation-policy-cancellationForm__field--full {
+    width: 100%;
+}
+
+.quiqqer-order-cancellation-policy-cancellationForm__field input,
+.quiqqer-order-cancellation-policy-cancellationForm__field textarea {
+    width: 100%;
+}
+
+.quiqqer-order-cancellation-policy-cancellationForm__checkbox {
+    align-items: flex-start;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.quiqqer-order-cancellation-policy-cancellationForm__captcha {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.quiqqer-order-cancellation-policy-cancellationForm__actions {
+    display: flex;
+    justify-content: flex-start;
+}
+
+@media (max-width: 767px) {
+    .quiqqer-order-cancellation-policy-cancellationForm__grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
