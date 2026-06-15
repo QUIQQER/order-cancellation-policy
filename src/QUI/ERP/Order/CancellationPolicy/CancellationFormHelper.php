@@ -90,10 +90,13 @@ class CancellationFormHelper
 
     public static function isCaptchaAvailable(): bool
     {
+        $captchaDisplayClass = self::getCaptchaDisplayClass();
+        $captchaHandlerClass = self::getCaptchaHandlerClass();
+
         if (
             !QUI::getPackageManager()->isInstalled('quiqqer/captcha')
-            || !class_exists('QUI\Captcha\Controls\CaptchaDisplay')
-            || !class_exists('QUI\Captcha\Handler')
+            || !class_exists($captchaDisplayClass)
+            || !class_exists($captchaHandlerClass)
         ) {
             return false;
         }
@@ -108,6 +111,16 @@ class CancellationFormHelper
         );
     }
 
+    private static function getCaptchaDisplayClass(): string
+    {
+        return 'QUI\Captcha\Controls\CaptchaDisplay';
+    }
+
+    private static function getCaptchaHandlerClass(): string
+    {
+        return 'QUI\Captcha\Handler';
+    }
+
     public static function validateCaptcha(string $captchaResponse): bool
     {
         if (!self::isCaptchaEnabled()) {
@@ -119,7 +132,14 @@ class CancellationFormHelper
             return true;
         }
 
-        return QUI\Captcha\Handler::isResponseValid($captchaResponse);
+        $captchaHandlerClass = self::getCaptchaHandlerClass();
+
+        if (!is_callable([$captchaHandlerClass, 'isResponseValid'])) {
+            self::logMissingCaptcha();
+            return true;
+        }
+
+        return (bool)call_user_func([$captchaHandlerClass, 'isResponseValid'], $captchaResponse);
     }
 
     public static function getCaptchaDisplay(): ?QUI\Control
@@ -133,7 +153,14 @@ class CancellationFormHelper
             return null;
         }
 
-        return new QUI\Captcha\Controls\CaptchaDisplay();
+        $captchaDisplayClass = self::getCaptchaDisplayClass();
+        $CaptchaDisplay = new $captchaDisplayClass();
+
+        if ($CaptchaDisplay instanceof QUI\Control) {
+            return $CaptchaDisplay;
+        }
+
+        return null;
     }
 
     public static function getMailRecipient(): string

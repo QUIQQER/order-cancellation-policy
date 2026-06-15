@@ -81,7 +81,7 @@ class OCP
 
                 $data = [
                     'id' => $Area->getId(),
-                    'title' => method_exists($Area, 'getTitle') ? $Area->getTitle() : '',
+                    'title' => $Area->getTitle(),
                     'ocp' => (int)$entry['ocp']
                 ];
 

@@ -32,12 +32,12 @@ class EventHandling
     }
 
     public static function onQuiqqerOrderSimpleCheckoutOutput(
-        QUI\ERP\Order\SimpleCheckout\Checkout $Checkout, // @phpstan-ignore-line
+        QUI\ERP\Order\SimpleCheckout\Checkout $Checkout,
         &$text
     ): void {
         try {
             $Project = QUI::getRewrite()->getProject();
-            $cancellationText = self::getText($Checkout->getOrder(), $Project); // @phpstan-ignore-line
+            $cancellationText = self::getText($Checkout->getOrder(), $Project);
 
             if (!empty($cancellationText)) {
                 $text = $cancellationText;
