@@ -12,7 +12,17 @@ class RequestRepository
     }
 
     /**
-     * @param array<string, scalar|null> $data
+     * @param array{
+     *     firstName: string,
+     *     lastName: string,
+     *     email: string,
+     *     phone: string,
+     *     orderNo: string,
+     *     orderDate: string,
+     *     message: string,
+     *     privacyPolicyAccepted: bool,
+     *     captchaResponse: string
+     * } $data
      * @throws QUI\Database\Exception
      */
     public static function create(

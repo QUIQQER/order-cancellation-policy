@@ -9,7 +9,7 @@
  *
  * @return string
  */
-QUI::$Ajax->registerFunction(
+QUI::getAjax()->registerFunction(
     'package_quiqqer_order-cancellation-policy_ajax_backend_getList',
     function () {
         return QUI\ERP\Order\CancellationPolicy\OCP::getList();

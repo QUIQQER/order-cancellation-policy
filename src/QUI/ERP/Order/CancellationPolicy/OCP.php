@@ -56,7 +56,7 @@ class OCP
     }
 
     /**
-     * @return array
+     * @return array<int, array{id: int|string, title: string, ocp: int}>
      */
     public static function getList(): array
     {

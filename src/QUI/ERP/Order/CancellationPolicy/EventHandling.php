@@ -7,6 +7,7 @@
 namespace QUI\ERP\Order\CancellationPolicy;
 
 use QUI;
+use QUI\ERP\Order\AbstractOrder;
 use QUI\ERP\Order\Controls\AbstractOrderingStep;
 
 /**
@@ -16,12 +17,18 @@ use QUI\ERP\Order\Controls\AbstractOrderingStep;
  */
 class EventHandling
 {
-    public static function onQuiqqerOrderOrderProcessCheckoutOutput(AbstractOrderingStep $Step, &$text): void
+    public static function onQuiqqerOrderOrderProcessCheckoutOutput(AbstractOrderingStep $Step, string &$text): void
     {
         $Project = QUI::getRewrite()->getProject();
 
-        if ($Step->getAttribute('Project')) {
-            $Project = $Step->getAttribute('Project');
+        $ProjectFromAttribute = $Step->getAttribute('Project');
+
+        if ($ProjectFromAttribute instanceof QUI\Projects\Project) {
+            $Project = $ProjectFromAttribute;
+        }
+
+        if (!$Project) {
+            return;
         }
 
         $cancellationText = self::getText($Step->getOrder(), $Project);
@@ -33,10 +40,15 @@ class EventHandling
 
     public static function onQuiqqerOrderSimpleCheckoutOutput(
         QUI\ERP\Order\SimpleCheckout\Checkout $Checkout,
-        &$text
+        string &$text
     ): void {
         try {
             $Project = QUI::getRewrite()->getProject();
+
+            if (!$Project) {
+                return;
+            }
+
             $cancellationText = self::getText($Checkout->getOrder(), $Project);
 
             if (!empty($cancellationText)) {
@@ -47,7 +59,7 @@ class EventHandling
         }
     }
 
-    protected static function getText($Order, QUI\Projects\Project $Project): ?string
+    protected static function getText(?AbstractOrder $Order, QUI\Projects\Project $Project): ?string
     {
         $OrderProcessCheckout = new QUI\ERP\Order\Controls\OrderProcess\Checkout([
             'Project' => $Project
@@ -60,6 +72,10 @@ class EventHandling
         } else {
             $Address = QUI::getUserBySession()->getStandardAddress();
             $Customer = QUI::getUserBySession();
+        }
+
+        if (!$Address || !$Customer) {
+            return null;
         }
 
         try {

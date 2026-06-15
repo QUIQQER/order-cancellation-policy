@@ -10,7 +10,17 @@ use function nl2br;
 class RequestMailer
 {
     /**
-     * @param array<string, scalar|null> $data
+     * @param array{
+     *     firstName: string,
+     *     lastName: string,
+     *     email: string,
+     *     phone: string,
+     *     orderNo: string,
+     *     orderDate: string,
+     *     message: string,
+     *     privacyPolicyAccepted: bool,
+     *     captchaResponse: string
+     * } $data
      * @throws QUI\Exception
      */
     public static function send(array $data, ?QUI\Projects\Site $Site = null): void
@@ -56,7 +66,17 @@ class RequestMailer
     }
 
     /**
-     * @param array<string, scalar|null> $data
+     * @param array{
+     *     firstName: string,
+     *     lastName: string,
+     *     email: string,
+     *     phone: string,
+     *     orderNo: string,
+     *     orderDate: string,
+     *     message: string,
+     *     privacyPolicyAccepted: bool,
+     *     captchaResponse: string
+     * } $data
      */
     protected static function buildBody(array $data): string
     {
@@ -72,7 +92,7 @@ class RequestMailer
         $body = '';
 
         foreach ($rows as $field => $localeKey) {
-            $value = (string)($data[$field] ?? '');
+            $value = $data[$field];
 
             if ($value === '') {
                 continue;

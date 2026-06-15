@@ -84,7 +84,17 @@ class FormSubmission
 
     /**
      * @param array<string, mixed> $data
-     * @return array<string, scalar|null>
+     * @return array{
+     *     firstName: string,
+     *     lastName: string,
+     *     email: string,
+     *     phone: string,
+     *     orderNo: string,
+     *     orderDate: string,
+     *     message: string,
+     *     privacyPolicyAccepted: bool,
+     *     captchaResponse: string
+     * }
      */
     protected static function normalize(array $data): array
     {
@@ -96,7 +106,7 @@ class FormSubmission
             'orderNo' => trim((string)($data['orderNo'] ?? '')),
             'orderDate' => trim((string)($data['orderDate'] ?? '')),
             'message' => trim((string)($data['message'] ?? '')),
-            'privacyPolicyAccepted' => !empty($data['privacyPolicyAccepted']) ? 1 : 0,
+            'privacyPolicyAccepted' => !empty($data['privacyPolicyAccepted']),
             'captchaResponse' => trim((string)($data['captchaResponse'] ?? ''))
         ];
     }
