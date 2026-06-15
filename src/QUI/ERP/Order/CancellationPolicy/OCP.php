@@ -56,7 +56,7 @@ class OCP
     }
 
     /**
-     * @return array
+     * @return array<int, array{id: int|string, title: string, ocp: int}>
      */
     public static function getList(): array
     {
@@ -81,7 +81,7 @@ class OCP
 
                 $data = [
                     'id' => $Area->getId(),
-                    'title' => method_exists($Area, 'getTitle') ? $Area->getTitle() : '',
+                    'title' => $Area->getTitle(),
                     'ocp' => (int)$entry['ocp']
                 ];
 

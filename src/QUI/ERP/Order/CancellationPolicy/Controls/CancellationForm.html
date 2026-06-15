@@ -1,0 +1,174 @@
+{if !$renderOnlyContent}
+<section class="quiqqer-order-cancellation-policy-cancellationForm"
+         data-name="cancellation-form"
+         {if $projectName}data-project-name="{$projectName}"{/if}
+         {if $projectLang}data-project-lang="{$projectLang}"{/if}
+         {if $privacyPolicySiteId}data-privacy-site-id="{$privacyPolicySiteId}"{/if}
+>
+    <div class="q-message q-message-error content-message-error"
+         data-name="error"
+         role="alert"
+         hidden
+    ></div>
+
+    <div data-name="view">
+{/if}
+    {if $mode === 'success'}
+    <div class="q-message q-message-success content-message-success"
+         data-name="success"
+         role="status"
+         aria-live="polite"
+         aria-atomic="true"
+    >
+        {locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.success.badge"}
+    </div>
+
+    <div class="quiqqer-order-cancellation-policy-cancellationForm__successDetails"
+         data-name="success-details"
+    >
+        <h2 class="quiqqer-order-cancellation-policy-cancellationForm__successTitle">
+            {$successHeadline}
+        </h2>
+
+        {if $successText}
+        <div class="quiqqer-order-cancellation-policy-cancellationForm__successText default-content">
+            {$successText}
+        </div>
+        {/if}
+
+        <p class="quiqqer-order-cancellation-policy-cancellationForm__successHint">
+            {$successHint}
+        </p>
+
+        {if $startSiteUrl || $profileSiteUrl}
+        <div class="quiqqer-order-cancellation-policy-cancellationForm__successMeta">
+            {locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.success.actionsLabel"}
+        </div>
+
+        <div class="quiqqer-order-cancellation-policy-cancellationForm__successActions"
+             data-name="success-actions"
+        >
+            {if $startSiteUrl}
+            <a href="{$startSiteUrl}"
+               class="btn btn-primary"
+               data-name="success-start-link"
+            >
+                <i class="fa-solid fa-house" aria-hidden="true"></i>
+                {locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.success.link.start"}
+            </a>
+            {/if}
+
+            {if $profileSiteUrl}
+            <a href="{$profileSiteUrl}"
+               class="btn btn-outline btn-primary"
+               data-name="success-profile-link"
+            >
+                {locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.success.link.profile"}
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            {/if}
+        </div>
+        {/if}
+    </div>
+    {else}
+    {if $introText}
+    <div class="quiqqer-order-cancellation-policy-cancellationForm__intro default-content"
+         data-name="intro"
+    >
+        {$introText}
+    </div>
+    {/if}
+    <form method="post"
+          action=""
+          data-name="form"
+          class="quiqqer-order-cancellation-policy-cancellationForm__form"
+    >
+        <div class="quiqqer-order-cancellation-policy-cancellationForm__grid">
+            <label class="quiqqer-order-cancellation-policy-cancellationForm__field">
+                <span>{locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.firstName"} *</span>
+                <input type="text" name="firstName" data-name="first-name" value="{$prefilledFirstName}" required>
+            </label>
+
+            <label class="quiqqer-order-cancellation-policy-cancellationForm__field">
+                <span>{locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.lastName"} *</span>
+                <input type="text" name="lastName" data-name="last-name" value="{$prefilledLastName}" required>
+            </label>
+
+            <label class="quiqqer-order-cancellation-policy-cancellationForm__field">
+                <span>{locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.email"} *</span>
+                <input type="email" name="email" data-name="email" value="{$prefilledEmail}" required>
+            </label>
+
+            <label class="quiqqer-order-cancellation-policy-cancellationForm__field">
+                <span>{locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.phone"}</span>
+                <input type="text" name="phone" data-name="phone" value="{$prefilledPhone}">
+            </label>
+
+            <label class="quiqqer-order-cancellation-policy-cancellationForm__field">
+                <span>{locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.orderNo"} *</span>
+                <input type="text"
+                       name="orderNo"
+                       data-name="order-no"
+                       value="{$prefilledOrderNo}"
+                       {if $orderNoReadonly}readonly aria-readonly="true"{/if}
+                       required
+                >
+            </label>
+
+            <label class="quiqqer-order-cancellation-policy-cancellationForm__field">
+                <span>{locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.orderDate"}</span>
+                <input type="date"
+                       name="orderDate"
+                       data-name="order-date"
+                       value="{$prefilledOrderDate}"
+                       {if $orderDateReadonly}readonly aria-readonly="true"{/if}
+                >
+            </label>
+        </div>
+
+        <label class="quiqqer-order-cancellation-policy-cancellationForm__field quiqqer-order-cancellation-policy-cancellationForm__field--full">
+            <span>{locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.message"} *</span>
+            <textarea name="message"
+                      data-name="message"
+                      rows="7"
+                      placeholder="{locale group='quiqqer/order-cancellation-policy' var='control.cancellationForm.message.placeholder'}"
+                      required
+            ></textarea>
+        </label>
+
+        <label class="quiqqer-order-cancellation-policy-cancellationForm__checkbox">
+            <input type="checkbox"
+                   name="privacyPolicyAccepted"
+                   value="1"
+                   data-name="privacy-policy-accepted"
+                   required
+            >
+            <span>{$privacyPolicyLabel}</span>
+        </label>
+
+        {if isset($CaptchaDisplay) && $CaptchaDisplay}
+        <div class="quiqqer-order-cancellation-policy-cancellationForm__captcha"
+             data-name="captcha-container"
+        >
+            <span class="quiqqer-order-cancellation-policy-cancellationForm__captchaLabel">
+                {locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.captcha"}
+            </span>
+            {$CaptchaDisplay->create()}
+            <input type="hidden" name="captchaResponse" data-name="captcha-response">
+        </div>
+        {/if}
+
+        <div class="quiqqer-order-cancellation-policy-cancellationForm__actions">
+            <button type="submit"
+                    class="btn btn-primary"
+                    data-name="submit"
+            >
+                {locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.submit"}
+            </button>
+        </div>
+    </form>
+    {/if}
+{if !$renderOnlyContent}
+    </div>
+</section>
+{/if}

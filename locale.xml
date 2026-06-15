@@ -36,6 +36,51 @@
             <en><![CDATA[For which areas would you like to activate the cancellation policy?]]></en>
         </locale>
 
+        <locale name="settings.frontend.title">
+            <de><![CDATA[Widerrufsformular]]></de>
+            <en><![CDATA[Cancellation form]]></en>
+        </locale>
+        <locale name="admin.types.cancellationForm">
+            <de><![CDATA[Widerrufsformular]]></de>
+            <en><![CDATA[Cancellation form]]></en>
+        </locale>
+        <locale name="admin.types.cancellationForm.description">
+            <de><![CDATA[Seite für das wiederverwendbare Widerrufsformular.]]></de>
+            <en><![CDATA[Page type for the reusable cancellation form.]]></en>
+        </locale>
+        <locale name="settings.frontend.mailTo.title">
+            <de><![CDATA[Empfänger-E-Mail]]></de>
+            <en><![CDATA[Recipient email]]></en>
+        </locale>
+        <locale name="settings.frontend.mailTo.description" html="1">
+            <de><![CDATA[Adresse für Benachrichtigungen aus dem Widerrufsformular. Bei leerem oder ungültigem Wert wird auf <b>mail.admin_mail</b> zurückgefallen.]]></de>
+            <en><![CDATA[Address for notifications from the cancellation form. If empty or invalid, <b>mail.admin_mail</b> is used as fallback.]]></en>
+        </locale>
+        <locale name="settings.frontend.useCaptcha.title">
+            <de><![CDATA[CAPTCHA aktivieren]]></de>
+            <en><![CDATA[Enable CAPTCHA]]></en>
+        </locale>
+        <locale name="settings.frontend.useCaptcha.description" html="true">
+            <de><![CDATA[Formularversand per CAPTCHA schützen. Standardmäßig aktiv. Erfordert <b>quiqqer/captcha</b> und eine funktionierende Konfiguration.]]></de>
+            <en><![CDATA[Protect the form submission with a CAPTCHA. Enabled by default. Requires <b>quiqqer/captcha</b> and a working configuration.]]></en>
+        </locale>
+        <locale name="settings.frontend.introText.title">
+            <de><![CDATA[Einleitung / Hinweistext]]></de>
+            <en><![CDATA[Intro / notice text]]></en>
+        </locale>
+        <locale name="settings.frontend.introText.description">
+            <de><![CDATA[Optionaler Text oberhalb des Widerrufsformulars.]]></de>
+            <en><![CDATA[Optional text displayed above the cancellation form.]]></en>
+        </locale>
+        <locale name="settings.frontend.successText.title">
+            <de><![CDATA[Erfolgsmeldung]]></de>
+            <en><![CDATA[Success message]]></en>
+        </locale>
+        <locale name="settings.frontend.successText.description">
+            <de><![CDATA[Optionaler Text, der nach erfolgreichem Versand angezeigt wird.]]></de>
+            <en><![CDATA[Optional text displayed after a successful submission.]]></en>
+        </locale>
+
         <locale name="ordering.step.checkout.checkoutAcceptText">
             <de><![CDATA[
                 Ich habe die [terms_and_conditions] und die [revocation] gelesen und akzeptiere sie.
@@ -43,6 +88,167 @@
             <en><![CDATA[
                 I have read the [terms_and_conditions] and the [revocation] and accept it.
             ]]></en>
+        </locale>
+        <locale name="frontendUsers.order.footer.cancellationForm.label">
+            <de><![CDATA[Widerrufsformular]]></de>
+            <en><![CDATA[Cancellation form]]></en>
+        </locale>
+        <locale name="frontendUsers.order.footer.cancellationForm.link">
+            <de><![CDATA[Zum Widerrufsformular]]></de>
+            <en><![CDATA[Go to cancellation form]]></en>
+        </locale>
+
+        <locale name="control.cancellationForm.intro.default" html="1">
+            <de><![CDATA[Bitte füllen Sie das Formular vollständig aus, damit wir Ihren Widerruf schnell bearbeiten können.]]></de>
+            <en><![CDATA[Please fill out the form completely so we can process your cancellation request quickly.]]></en>
+        </locale>
+        <locale name="control.cancellationForm.success" html="1">
+            <de><![CDATA[Ihre Widerrufsanfrage ist bei uns eingegangen. Wir prüfen den Vorgang zeitnah und melden uns bei Bedarf per E-Mail bei Ihnen.]]></de>
+            <en><![CDATA[Your cancellation request has been received. We will review it promptly and contact you by email if needed.]]></en>
+        </locale>
+        <locale name="control.cancellationForm.success.badge">
+            <de><![CDATA[Widerruf eingegangen]]></de>
+            <en><![CDATA[Cancellation request received]]></en>
+        </locale>
+        <locale name="control.cancellationForm.success.headline">
+            <de><![CDATA[Vielen Dank. Wir kümmern uns jetzt um Ihre Anfrage.]]></de>
+            <en><![CDATA[Thank you. We are now taking care of your request.]]></en>
+        </locale>
+        <locale name="control.cancellationForm.success.hint">
+            <de><![CDATA[Wenn Sie möchten, können Sie jetzt direkt weiter navigieren.]]></de>
+            <en><![CDATA[If you like, you can continue directly from here.]]></en>
+        </locale>
+        <locale name="control.cancellationForm.success.actionsLabel">
+            <de><![CDATA[Weiter zu]]></de>
+            <en><![CDATA[Continue to]]></en>
+        </locale>
+        <locale name="control.cancellationForm.success.link.start">
+            <de><![CDATA[Startseite]]></de>
+            <en><![CDATA[Go to homepage]]></en>
+        </locale>
+        <locale name="control.cancellationForm.success.link.profile">
+            <de><![CDATA[Mein Profil]]></de>
+            <en><![CDATA[Go to profile]]></en>
+        </locale>
+        <locale name="frontend.cancellationForm.introText" html="1">
+            <de><![CDATA[]]></de>
+            <en><![CDATA[]]></en>
+        </locale>
+        <locale name="frontend.cancellationForm.successText" html="1">
+            <de><![CDATA[]]></de>
+            <en><![CDATA[]]></en>
+        </locale>
+        <locale name="control.cancellationForm.mail.subject">
+            <de><![CDATA[Neue Widerrufsanfrage]]></de>
+            <en><![CDATA[New cancellation request]]></en>
+        </locale>
+        <locale name="control.cancellationForm.firstName">
+            <de><![CDATA[Vorname]]></de>
+            <en><![CDATA[First name]]></en>
+        </locale>
+        <locale name="control.cancellationForm.lastName">
+            <de><![CDATA[Nachname]]></de>
+            <en><![CDATA[Last name]]></en>
+        </locale>
+        <locale name="control.cancellationForm.email">
+            <de><![CDATA[E-Mail]]></de>
+            <en><![CDATA[Email]]></en>
+        </locale>
+        <locale name="control.cancellationForm.phone">
+            <de><![CDATA[Telefon]]></de>
+            <en><![CDATA[Phone]]></en>
+        </locale>
+        <locale name="control.cancellationForm.orderNo">
+            <de><![CDATA[Bestellnummer]]></de>
+            <en><![CDATA[Order number]]></en>
+        </locale>
+        <locale name="control.cancellationForm.orderDate">
+            <de><![CDATA[Bestelldatum]]></de>
+            <en><![CDATA[Order date]]></en>
+        </locale>
+        <locale name="control.cancellationForm.message">
+            <de><![CDATA[Nachricht]]></de>
+            <en><![CDATA[Message]]></en>
+        </locale>
+        <locale name="control.cancellationForm.message.placeholder">
+            <de><![CDATA[Bitte beschreiben Sie kurz Ihren Widerruf oder Ihr Anliegen.]]></de>
+            <en><![CDATA[Please briefly describe your cancellation request or concern.]]></en>
+        </locale>
+        <locale name="control.cancellationForm.captcha">
+            <de><![CDATA[CAPTCHA]]></de>
+            <en><![CDATA[CAPTCHA]]></en>
+        </locale>
+        <locale name="control.cancellationForm.submit">
+            <de><![CDATA[Widerruf absenden]]></de>
+            <en><![CDATA[Submit cancellation]]></en>
+        </locale>
+        <locale name="control.cancellationForm.privacyPolicy.label" html="1">
+            <de><![CDATA[Ich habe die [privacyPolicyLink] gelesen und akzeptiere sie.]]></de>
+            <en><![CDATA[I have read and accept the [privacyPolicyLink].]]></en>
+        </locale>
+        <locale name="control.cancellationForm.privacyPolicy.labelWithoutLink">
+            <de><![CDATA[Ich habe die Datenschutzerklärung gelesen und akzeptiere sie.]]></de>
+            <en><![CDATA[I have read and accept the privacy policy.]]></en>
+        </locale>
+        <locale name="control.cancellationForm.error.requiredField">
+            <de><![CDATA[Bitte füllen Sie das Feld „[field]“ aus.]]></de>
+            <en><![CDATA[Please fill in the “[field]” field.]]></en>
+        </locale>
+        <locale name="control.cancellationForm.error.invalidEmail">
+            <de><![CDATA[Bitte geben Sie eine gültige E-Mail-Adresse ein.]]></de>
+            <en><![CDATA[Please enter a valid email address.]]></en>
+        </locale>
+        <locale name="control.cancellationForm.error.invalidOrderDate">
+            <de><![CDATA[Bitte geben Sie ein gültiges Bestelldatum ein.]]></de>
+            <en><![CDATA[Please enter a valid order date.]]></en>
+        </locale>
+        <locale name="control.cancellationForm.error.fieldTooLong">
+            <de><![CDATA[Das Feld „[field]“ darf maximal [max] Zeichen lang sein.]]></de>
+            <en><![CDATA[The “[field]” field may contain a maximum of [max] characters.]]></en>
+        </locale>
+        <locale name="control.cancellationForm.error.privacyPolicyRequired">
+            <de><![CDATA[Bitte bestätigen Sie die Datenschutzerklärung.]]></de>
+            <en><![CDATA[Please confirm the privacy policy.]]></en>
+        </locale>
+        <locale name="control.cancellationForm.error.captcha">
+            <de><![CDATA[Die CAPTCHA-Prüfung ist fehlgeschlagen. Bitte versuchen Sie es erneut.]]></de>
+            <en><![CDATA[The CAPTCHA verification failed. Please try again.]]></en>
+        </locale>
+        <locale name="control.cancellationForm.error.server">
+            <de><![CDATA[Die Anfrage konnte nicht verarbeitet werden. Bitte versuchen Sie es später erneut.]]></de>
+            <en><![CDATA[The request could not be processed. Please try again later.]]></en>
+        </locale>
+        <locale name="control.cancellationForm.mail.label.firstName">
+            <de><![CDATA[Vorname]]></de>
+            <en><![CDATA[First name]]></en>
+        </locale>
+        <locale name="control.cancellationForm.mail.label.lastName">
+            <de><![CDATA[Nachname]]></de>
+            <en><![CDATA[Last name]]></en>
+        </locale>
+        <locale name="control.cancellationForm.mail.label.email">
+            <de><![CDATA[E-Mail]]></de>
+            <en><![CDATA[Email]]></en>
+        </locale>
+        <locale name="control.cancellationForm.mail.label.phone">
+            <de><![CDATA[Telefon]]></de>
+            <en><![CDATA[Phone]]></en>
+        </locale>
+        <locale name="control.cancellationForm.mail.label.orderNo">
+            <de><![CDATA[Bestellnummer]]></de>
+            <en><![CDATA[Order number]]></en>
+        </locale>
+        <locale name="control.cancellationForm.mail.label.orderDate">
+            <de><![CDATA[Bestelldatum]]></de>
+            <en><![CDATA[Order date]]></en>
+        </locale>
+        <locale name="control.cancellationForm.mail.label.message">
+            <de><![CDATA[Nachricht]]></de>
+            <en><![CDATA[Message]]></en>
+        </locale>
+        <locale name="control.cancellationForm.mail.privacyPolicyAccepted">
+            <de><![CDATA[Die Datenschutzerklärung wurde bestätigt.]]></de>
+            <en><![CDATA[The privacy policy was accepted.]]></en>
         </locale>
     </groups>
 
