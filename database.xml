@@ -8,5 +8,25 @@
             <primary>id</primary>
             <auto_increment>id</auto_increment>
         </table>
+
+        <table name="requests">
+            <field type="INT(10) NOT NULL PRIMARY KEY">id</field>
+            <field type="VARCHAR(255) DEFAULT NULL">project</field>
+            <field type="VARCHAR(10) DEFAULT NULL">lang</field>
+            <field type="INT(10) DEFAULT NULL">site_id</field>
+            <field type="DATETIME NOT NULL">created_at</field>
+            <field type="VARCHAR(255) NOT NULL">first_name</field>
+            <field type="VARCHAR(255) NOT NULL">last_name</field>
+            <field type="VARCHAR(255) NOT NULL">email</field>
+            <field type="VARCHAR(255) DEFAULT NULL">phone</field>
+            <field type="VARCHAR(255) NOT NULL">order_no</field>
+            <field type="DATE DEFAULT NULL">order_date</field>
+            <field type="TEXT NOT NULL">message</field>
+            <field type="INT(1) NOT NULL DEFAULT 0">privacy_policy_accepted</field>
+            <field type="VARCHAR(32) NOT NULL DEFAULT 'new'">status</field>
+
+            <primary>id</primary>
+            <auto_increment>id</auto_increment>
+        </table>
     </global>
 </database>
