@@ -71,6 +71,9 @@ class CancellationForm extends QUI\Control
 
         $introText = (string)$this->getAttribute('introText');
         $successText = (string)$this->getAttribute('successText');
+        $prefilledOrderNo = CancellationFormHelper::getPrefilledOrderNoFromRequest();
+        $prefilledOrderDate = CancellationFormHelper::getPrefilledOrderDateFromRequest();
+        $prefilledUserData = CancellationFormHelper::getPrefilledUserData();
         $startSiteUrl = null;
         $profileSiteUrl = null;
 
@@ -117,6 +120,14 @@ class CancellationForm extends QUI\Control
                 'quiqqer/order-cancellation-policy',
                 'control.cancellationForm.success.hint'
             ),
+            'prefilledFirstName' => $prefilledUserData['firstName'],
+            'prefilledLastName' => $prefilledUserData['lastName'],
+            'prefilledEmail' => $prefilledUserData['email'],
+            'prefilledPhone' => $prefilledUserData['phone'],
+            'prefilledOrderNo' => $prefilledOrderNo,
+            'prefilledOrderDate' => $prefilledOrderDate,
+            'orderNoReadonly' => $prefilledOrderNo !== '',
+            'orderDateReadonly' => $prefilledOrderDate !== '',
             'privacyPolicyLabel' => str_replace(['[', ']'], '', $privacyPolicyLabel),
             'CaptchaDisplay' => CancellationFormHelper::getCaptchaDisplay(),
             'privacyPolicySiteId' => $PrivacyPolicySite?->getId(),

@@ -86,38 +86,54 @@
         <div class="quiqqer-order-cancellation-policy-cancellationForm__grid">
             <label class="quiqqer-order-cancellation-policy-cancellationForm__field">
                 <span>{locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.firstName"} *</span>
-                <input type="text" name="firstName" data-name="first-name" required>
+                <input type="text" name="firstName" data-name="first-name" value="{$prefilledFirstName}" required>
             </label>
 
             <label class="quiqqer-order-cancellation-policy-cancellationForm__field">
                 <span>{locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.lastName"} *</span>
-                <input type="text" name="lastName" data-name="last-name" required>
+                <input type="text" name="lastName" data-name="last-name" value="{$prefilledLastName}" required>
             </label>
 
             <label class="quiqqer-order-cancellation-policy-cancellationForm__field">
                 <span>{locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.email"} *</span>
-                <input type="email" name="email" data-name="email" required>
+                <input type="email" name="email" data-name="email" value="{$prefilledEmail}" required>
             </label>
 
             <label class="quiqqer-order-cancellation-policy-cancellationForm__field">
                 <span>{locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.phone"}</span>
-                <input type="text" name="phone" data-name="phone">
+                <input type="text" name="phone" data-name="phone" value="{$prefilledPhone}">
             </label>
 
             <label class="quiqqer-order-cancellation-policy-cancellationForm__field">
                 <span>{locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.orderNo"} *</span>
-                <input type="text" name="orderNo" data-name="order-no" required>
+                <input type="text"
+                       name="orderNo"
+                       data-name="order-no"
+                       value="{$prefilledOrderNo}"
+                       {if $orderNoReadonly}readonly aria-readonly="true"{/if}
+                       required
+                >
             </label>
 
             <label class="quiqqer-order-cancellation-policy-cancellationForm__field">
                 <span>{locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.orderDate"}</span>
-                <input type="date" name="orderDate" data-name="order-date">
+                <input type="date"
+                       name="orderDate"
+                       data-name="order-date"
+                       value="{$prefilledOrderDate}"
+                       {if $orderDateReadonly}readonly aria-readonly="true"{/if}
+                >
             </label>
         </div>
 
         <label class="quiqqer-order-cancellation-policy-cancellationForm__field quiqqer-order-cancellation-policy-cancellationForm__field--full">
             <span>{locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.message"} *</span>
-            <textarea name="message" data-name="message" rows="7" required></textarea>
+            <textarea name="message"
+                      data-name="message"
+                      rows="7"
+                      placeholder="{locale group='quiqqer/order-cancellation-policy' var='control.cancellationForm.message.placeholder'}"
+                      required
+            ></textarea>
         </label>
 
         <label class="quiqqer-order-cancellation-policy-cancellationForm__checkbox">

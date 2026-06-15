@@ -5,7 +5,10 @@ namespace QUI\ERP\Order\CancellationPolicy;
 use QUI;
 use QUI\ERP\Utils\Sites as ERPSites;
 
+use function date;
 use function class_exists;
+use function is_string;
+use function strtotime;
 use function trim;
 
 class CancellationFormHelper
@@ -184,6 +187,116 @@ class CancellationFormHelper
         }
 
         return null;
+    }
+
+    public static function getCancellationFormSite(
+        ?QUI\Projects\Project $Project = null
+    ): ?QUI\Projects\Site {
+        try {
+            if ($Project === null) {
+                $Project = QUI::getRewrite()->getProject();
+            }
+
+            if (!$Project) {
+                return null;
+            }
+
+            $result = $Project->getSites([
+                'where' => [
+                    'type' => 'quiqqer/order-cancellation-policy:types/cancellationForm'
+                ],
+                'limit' => 1
+            ]);
+
+            if (isset($result[0]) && $result[0] instanceof QUI\Projects\Site) {
+                return $result[0];
+            }
+        } catch (\Exception $Exception) {
+            QUI\System\Log::writeException($Exception);
+        }
+
+        return null;
+    }
+
+    public static function getPrefilledOrderNoFromRequest(): string
+    {
+        if (!isset($_GET['orderNo']) || !is_string($_GET['orderNo'])) {
+            return '';
+        }
+
+        return trim($_GET['orderNo']);
+    }
+
+    public static function getPrefilledOrderDateFromRequest(): string
+    {
+        if (!isset($_GET['orderDate']) || !is_string($_GET['orderDate'])) {
+            return '';
+        }
+
+        $orderDate = trim($_GET['orderDate']);
+
+        if ($orderDate === '') {
+            return '';
+        }
+
+        $timestamp = strtotime($orderDate);
+
+        if (!$timestamp) {
+            return '';
+        }
+
+        return date('Y-m-d', $timestamp);
+    }
+
+    /**
+     * @return array<string, string>
+     */
+    public static function getPrefilledUserData(): array
+    {
+        $result = [
+            'firstName' => '',
+            'lastName' => '',
+            'email' => '',
+            'phone' => ''
+        ];
+
+        try {
+            $User = QUI::getUserBySession();
+
+            if (QUI::getUsers()->isNobodyUser($User)) {
+                return $result;
+            }
+
+            $Address = $User->getStandardAddress();
+
+            if ($Address) {
+                $result['firstName'] = trim((string)$Address->getAttribute('firstname'));
+                $result['lastName'] = trim((string)$Address->getAttribute('lastname'));
+                $result['phone'] = trim((string)$Address->getPhone());
+
+                $mailList = $Address->getMailList();
+
+                if (!empty($mailList[0]) && is_string($mailList[0])) {
+                    $result['email'] = trim($mailList[0]);
+                }
+            }
+
+            if ($result['firstName'] === '') {
+                $result['firstName'] = trim((string)$User->getAttribute('firstname'));
+            }
+
+            if ($result['lastName'] === '') {
+                $result['lastName'] = trim((string)$User->getAttribute('lastname'));
+            }
+
+            if ($result['email'] === '') {
+                $result['email'] = trim((string)$User->getAttribute('email'));
+            }
+        } catch (\Exception $Exception) {
+            QUI\System\Log::writeDebugException($Exception);
+        }
+
+        return $result;
     }
 
     public static function getProjectFromAjax(?string $project): ?QUI\Projects\Project

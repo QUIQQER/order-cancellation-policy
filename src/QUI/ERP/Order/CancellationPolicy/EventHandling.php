@@ -9,6 +9,13 @@ namespace QUI\ERP\Order\CancellationPolicy;
 use QUI;
 use QUI\ERP\Order\AbstractOrder;
 use QUI\ERP\Order\Controls\AbstractOrderingStep;
+use QUI\ERP\Order\OrderView;
+use QUI\Smarty\Collector;
+
+use function date;
+use function rawurlencode;
+use function str_contains;
+use function strtotime;
 
 /**
  * Class EventHandling
@@ -56,6 +63,17 @@ class EventHandling
             }
         } catch (QUI\Exception $exception) {
             QUI\System\Log::addError($exception->getMessage());
+        }
+    }
+
+    public static function templateFrontendUserOrderFooterEnd(
+        Collector $Collector,
+        OrderView $Order
+    ): void {
+        $html = self::getFrontendUserOrderFooterHtml($Order);
+
+        if ($html !== '') {
+            $Collector->append($html);
         }
     }
 
@@ -112,5 +130,74 @@ class EventHandling
                 'revocation' => $OrderProcessCheckout->getLinkOf('revocation')
             ]
         );
+    }
+
+    protected static function getFrontendUserOrderFooterHtml(OrderView $Order): string
+    {
+        try {
+            $Project = QUI::getRewrite()->getProject();
+        } catch (QUI\Exception) {
+            return '';
+        }
+
+        try {
+            $User = QUI::getUsers()->get($Order->getCustomer()->getUUID());
+
+            if ($User->isCompany()) {
+                return '';
+            }
+        } catch (QUI\Exception $Exception) {
+            QUI\System\Log::writeDebugException($Exception);
+        }
+
+        try {
+            $Country = $Order->getInvoiceAddress()->getCountry();
+        } catch (QUI\Exception) {
+            return '';
+        }
+
+        $Area = QUI\ERP\Areas\Utils::getAreaByCountry($Country);
+
+        if (!$Area || !OCP::hasAreaCancellationPolicy($Area)) {
+            return '';
+        }
+
+        $CancellationFormSite = CancellationFormHelper::getCancellationFormSite($Project);
+
+        if (!$CancellationFormSite) {
+            return '';
+        }
+
+        $label = QUI::getLocale()->get(
+            'quiqqer/order-cancellation-policy',
+            'frontendUsers.order.footer.cancellationForm.label'
+        );
+        $linkText = QUI::getLocale()->get(
+            'quiqqer/order-cancellation-policy',
+            'frontendUsers.order.footer.cancellationForm.link'
+        );
+        $url = $CancellationFormSite->getUrlRewritten();
+        $url .= str_contains($url, '?') ? '&' : '?';
+        $url .= 'orderNo=' . rawurlencode($Order->getPrefixedId());
+
+        $orderData = $Order->toArray();
+
+        if (!empty($orderData['cDate'])) {
+            $timestamp = strtotime((string)$orderData['cDate']);
+
+            if ($timestamp) {
+                $url .= '&orderDate=' . rawurlencode(date('Y-m-d', $timestamp));
+            }
+        }
+
+        return '<div class="quiqqer-order-profile-orders-order__group '
+            . 'quiqqer-order-profile-orders-order-footer-cancellationForm">'
+            . '<span class="quiqqer-order-profile-orders-order__label">'
+            . $label
+            . ':</span>'
+            . '<div class="quiqqer-order-profile-orders-order__value">'
+            . '<a href="' . $url . '">' . $linkText . '</a>'
+            . '</div>'
+            . '</div>';
     }
 }

@@ -89,6 +89,14 @@
                 I have read the [terms_and_conditions] and the [revocation] and accept it.
             ]]></en>
         </locale>
+        <locale name="frontendUsers.order.footer.cancellationForm.label">
+            <de><![CDATA[Widerrufsformular]]></de>
+            <en><![CDATA[Cancellation form]]></en>
+        </locale>
+        <locale name="frontendUsers.order.footer.cancellationForm.link">
+            <de><![CDATA[Zum Widerrufsformular]]></de>
+            <en><![CDATA[Go to cancellation form]]></en>
+        </locale>
 
         <locale name="control.cancellationForm.intro.default" html="1">
             <de><![CDATA[Bitte füllen Sie das Formular vollständig aus, damit wir Ihren Widerruf schnell bearbeiten können.]]></de>
@@ -161,6 +169,10 @@
         <locale name="control.cancellationForm.message">
             <de><![CDATA[Nachricht]]></de>
             <en><![CDATA[Message]]></en>
+        </locale>
+        <locale name="control.cancellationForm.message.placeholder">
+            <de><![CDATA[Bitte beschreiben Sie kurz Ihren Widerruf oder Ihr Anliegen.]]></de>
+            <en><![CDATA[Please briefly describe your cancellation request or concern.]]></en>
         </locale>
         <locale name="control.cancellationForm.captcha">
             <de><![CDATA[CAPTCHA]]></de>
