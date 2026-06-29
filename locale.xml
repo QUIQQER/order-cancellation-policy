@@ -69,7 +69,7 @@
             <en><![CDATA[Intro / notice text]]></en>
         </locale>
         <locale name="settings.frontend.introText.description">
-            <de><![CDATA[Optionaler Text oberhalb des Widerrufsformulars.]]></de>
+            <de><![CDATA[Optionaler Text oberhalb des Widerrufsformulars. Wenn leer, wird im Frontend der Default-Text aus der Locale <code>control.cancellationForm.intro.default</code> angezeigt.]]></de>
             <en><![CDATA[Optional text displayed above the cancellation form.]]></en>
         </locale>
         <locale name="settings.frontend.successText.title">
@@ -77,7 +77,7 @@
             <en><![CDATA[Success message]]></en>
         </locale>
         <locale name="settings.frontend.successText.description">
-            <de><![CDATA[Optionaler Text, der nach erfolgreichem Versand angezeigt wird.]]></de>
+            <de><![CDATA[Optionaler Text, der nach erfolgreichem Versand angezeigt wird. Wenn leer, wird im Frontend der Default-Text aus der Locale <code>control.cancellationForm.success</code> angezeigt.]]></de>
             <en><![CDATA[Optional text displayed after a successful submission.]]></en>
         </locale>
 
@@ -99,12 +99,12 @@
         </locale>
 
         <locale name="control.cancellationForm.intro.default" html="1">
-            <de><![CDATA[Bitte füllen Sie das Formular vollständig aus, damit wir Ihren Widerruf schnell bearbeiten können.]]></de>
-            <en><![CDATA[Please fill out the form completely so we can process your cancellation request quickly.]]></en>
+            <de><![CDATA[<p>Bitte füllen Sie das Formular vollständig aus, damit wir Ihren Widerruf schnell bearbeiten können.</p>]]></de>
+            <en><![CDATA[<p>Please fill out the form completely so we can process your cancellation request quickly.</p>]]></en>
         </locale>
         <locale name="control.cancellationForm.success" html="1">
-            <de><![CDATA[Ihre Widerrufsanfrage ist bei uns eingegangen. Wir prüfen den Vorgang zeitnah und melden uns bei Bedarf per E-Mail bei Ihnen.]]></de>
-            <en><![CDATA[Your cancellation request has been received. We will review it promptly and contact you by email if needed.]]></en>
+            <de><![CDATA[<p>Ihre Widerrufsanfrage ist bei uns eingegangen. Wir prüfen den Vorgang zeitnah und melden uns bei Bedarf per E-Mail bei Ihnen.</p>]]></de>
+            <en><![CDATA[<p>Your cancellation request has been received. We will review it promptly and contact you by email if needed.</p>]]></en>
         </locale>
         <locale name="control.cancellationForm.success.badge">
             <de><![CDATA[Widerruf eingegangen]]></de>
