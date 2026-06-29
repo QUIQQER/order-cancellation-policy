@@ -23,7 +23,11 @@ class RequestMailer
      * } $data
      * @throws QUI\Exception
      */
-    public static function send(array $data, ?QUI\Projects\Site $Site = null): void
+    public static function send(
+        array $data,
+        ?QUI\Projects\Project $Project = null,
+        ?QUI\Projects\Site $Site = null
+    ): void
     {
         $recipient = CancellationFormHelper::getMailRecipient();
 
@@ -36,32 +40,43 @@ class RequestMailer
             );
         }
 
-        $subject = QUI::getLocale()->get(
-            'quiqqer/order-cancellation-policy',
-            'control.cancellationForm.mail.subject'
-        );
+        $Locale = QUI::getLocale();
+        $resetLocale = false;
 
-        if ($Site) {
-            $subject .= ' | ' . $Site->getAttribute('title');
+        if ($Project && $Project->getLang() !== '') {
+            $Locale->setTemporaryCurrent($Project->getLang());
+            $resetLocale = true;
         }
 
-        $Mailer = QUI::getMailManager()->getMailer();
-        $Mailer->addRecipient($recipient);
-        $Mailer->addReplyTo((string)$data['email']);
-        $Mailer->setSubject($subject);
-        $Mailer->setBody(self::buildBody($data));
-
         try {
+            $subject = $Locale->get(
+                'quiqqer/order-cancellation-policy',
+                'control.cancellationForm.mail.subject'
+            );
+
+            if ($Site) {
+                $subject .= ' | ' . $Site->getAttribute('title');
+            }
+
+            $Mailer = QUI::getMailManager()->getMailer();
+            $Mailer->addRecipient($recipient);
+            $Mailer->addReplyTo((string)$data['email']);
+            $Mailer->setSubject($subject);
+            $Mailer->setBody(self::buildBody($data));
             $Mailer->send();
         } catch (\Exception $Exception) {
             QUI\System\Log::writeException($Exception);
 
             throw new QUI\Exception(
-                QUI::getLocale()->get(
+                $Locale->get(
                     'quiqqer/order-cancellation-policy',
                     'control.cancellationForm.error.server'
                 )
             );
+        } finally {
+            if ($resetLocale) {
+                $Locale->resetCurrent();
+            }
         }
     }
 

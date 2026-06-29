@@ -79,7 +79,7 @@ class FormSubmission
         }
 
         RequestRepository::create($normalizedData, $Project, $Site);
-        RequestMailer::send($normalizedData, $Site);
+        RequestMailer::send($normalizedData, $Project, $Site);
     }
 
     /**
