@@ -2,31 +2,25 @@
 <database>
     <global>
         <table name="areas">
-            <field type="INT(10) NOT NULL PRIMARY KEY">id</field>
-            <field type="INT(1) DEFAULT 0">ocp</field>
-
-            <primary>id</primary>
-            <auto_increment>id</auto_increment>
+            <field type="integer" autoincrement="true" primary="true">id</field>
+            <field type="boolean" default="0">ocp</field>
         </table>
 
         <table name="requests">
-            <field type="INT(10) NOT NULL PRIMARY KEY">id</field>
-            <field type="VARCHAR(255) DEFAULT NULL">project</field>
-            <field type="VARCHAR(10) DEFAULT NULL">lang</field>
-            <field type="INT(10) DEFAULT NULL">site_id</field>
-            <field type="DATETIME NOT NULL">created_at</field>
-            <field type="VARCHAR(255) NOT NULL">first_name</field>
-            <field type="VARCHAR(255) NOT NULL">last_name</field>
-            <field type="VARCHAR(255) NOT NULL">email</field>
-            <field type="VARCHAR(255) DEFAULT NULL">phone</field>
-            <field type="VARCHAR(255) NOT NULL">order_no</field>
-            <field type="DATE DEFAULT NULL">order_date</field>
-            <field type="TEXT NOT NULL">message</field>
-            <field type="INT(1) NOT NULL DEFAULT 0">privacy_policy_accepted</field>
-            <field type="VARCHAR(32) NOT NULL DEFAULT 'new'">status</field>
-
-            <primary>id</primary>
-            <auto_increment>id</auto_increment>
+            <field type="integer" autoincrement="true" primary="true">id</field>
+            <field type="string" length="255" nullable="true" default="null">project</field>
+            <field type="string" length="10" nullable="true" default="null">lang</field>
+            <field type="integer" nullable="true" default="null">site_id</field>
+            <field type="datetime">created_at</field>
+            <field type="string" length="255">first_name</field>
+            <field type="string" length="255">last_name</field>
+            <field type="string" length="255">email</field>
+            <field type="string" length="255" nullable="true" default="null">phone</field>
+            <field type="string" length="255">order_no</field>
+            <field type="date" nullable="true" default="null">order_date</field>
+            <field type="text">message</field>
+            <field type="boolean" default="0">privacy_policy_accepted</field>
+            <field type="string" length="32" default="new">status</field>
         </table>
     </global>
 </database>

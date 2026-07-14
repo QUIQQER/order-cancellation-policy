@@ -86,9 +86,8 @@ define('package/quiqqer/order-cancellation-policy/bin/frontend/controls/Cancella
             const captchaElement = container.querySelector(
                 'div[data-qui="package/quiqqer/captcha/bin/controls/CaptchaDisplay"]'
             );
-            const captchaResponseInput = container.querySelector('[data-name="captcha-response"]');
 
-            if (!captchaElement || !captchaResponseInput) {
+            if (!captchaElement) {
                 return;
             }
 
@@ -97,11 +96,9 @@ define('package/quiqqer/order-cancellation-policy/bin/frontend/controls/Cancella
                     CaptchaControl.addEvents({
                         onSuccess: (response) => {
                             this.$captchaResponse = response;
-                            captchaResponseInput.value = response;
                         },
                         onExpired: () => {
                             this.$captchaResponse = '';
-                            captchaResponseInput.value = '';
                         }
                     });
                 });
@@ -157,7 +154,7 @@ define('package/quiqqer/order-cancellation-policy/bin/frontend/controls/Cancella
                     orderDate: formData.get('orderDate') || '',
                     message: formData.get('message') || '',
                     privacyPolicyAccepted: formData.get('privacyPolicyAccepted') ? 1 : 0,
-                    captchaResponse: formData.get('captchaResponse') || this.$captchaResponse || '',
+                    captchaResponse: formData.get('quiqqer-captcha-response') || this.$captchaResponse || '',
                     showError: false,
                     onError: (Exception) => {
                         this.Loader.hide();

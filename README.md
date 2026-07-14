@@ -1,55 +1,54 @@
 ![](bin/images/Readme.png)
 
-ERP Order revocation instruction (cancellation policy)
-========
+# QUIQQER Order Cancellation Policy
 
-This module is for shops in Europe that sell to private customers. 
-With this module it is possible to indicate a cancellation policy for certain areas.
+This package adds cancellation policy support for QUIQQER shops that sell to
+private customers in Europe. It lets administrators enable cancellation policy
+handling for selected ERP areas and provides a reusable frontend cancellation
+form for customer requests.
 
+## Features
 
-The revocation instruction is a instruction about the right of revocation 
-of a consumer with certain consumer contracts.
+- Adds cancellation policy text to the order checkout process.
+- Enables cancellation policy handling per ERP area.
+- Provides a frontend page type for cancellation form submissions.
+- Sends cancellation form requests by email.
+- Optionally protects the frontend form with `quiqqer/captcha`.
 
-The EU Consumer Rights Directive harmonised the formal requirements 
-for a proper revocation instruction as of 13 June 2014 throughout the EU. 
-The legal uncertainty in connection with the German government's sample revocation 
-instruction issued under the German Civil Code Info Ordinance (BGB-InfoV) 
-has been a thing of the past ever since.
+## Installation
 
-Package name:
+Install the package through Composer:
 
-    order-cancellation-policy
+```shell
+composer require quiqqer/order-cancellation-policy
+```
 
+Run the QUIQQER package setup after installation.
 
-Features
---------
+## Configuration
 
-- Add an order revocation instruction to the order process
-- Set up an order revocation instruction for specific areas
+Open the package settings in the QUIQQER administration to configure:
 
-Installation
-------------
+- the recipient email address for cancellation form requests,
+- whether CAPTCHA protection is enabled,
+- optional intro and success text for the frontend form,
+- the ERP areas where cancellation policy handling is active.
 
-The package name is: `quiqqer/order-cancellation-policy`
+Create a page with the `Cancellation form` page type to expose the reusable
+frontend cancellation form.
 
+## Technical Notes
 
-Contribute
-----------
-- Project: https://dev.quiqqer.com/quiqqer/order-cancellation-policy
-- Issue Tracker: https://dev.quiqqer.com/quiqqer/order-cancellation-policy/issues
-- Source Code: https://dev.quiqqer.com/quiqqer/order-cancellation-policy/tree/master
-- Wiki: https://dev.quiqqer.com/quiqqer/order-cancellation-policy/wikis/home
+The package stores cancellation form submissions in its package table and sends
+the request details to the configured recipient. The CAPTCHA integration uses
+the shared `quiqqer/captcha` control when that package is installed and enabled.
 
+## Support
 
-Support
--------
+- Issues: https://dev.quiqqer.com/quiqqer/order-cancellation-policy/issues
+- Source: https://dev.quiqqer.com/quiqqer/order-cancellation-policy
+- Email: support@pcsg.de
 
-If you found any flaws, have any wishes or suggestions you can send an email
-to [support@pcsg.de](mailto:support@pcsg.de) to inform us about your concerns.  
-We will try to respond to your request and forward it to the responsible developer.
+## License
 
-
-License
--------
-
-- GPL-3.0+
+GPL-3.0-or-later
