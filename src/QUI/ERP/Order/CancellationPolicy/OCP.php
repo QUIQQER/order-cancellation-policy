@@ -10,6 +10,7 @@ use QUI;
 use QUI\ERP\Areas\Area;
 use QUI\ERP\Areas\Handler;
 use QUI\Exception;
+use QUI\Utils\Doctrine;
 
 /**
  * Class OCP
@@ -37,22 +38,24 @@ class OCP
     public static function hasAreaCancellationPolicy(Area $Area): bool | int
     {
         try {
-            $result = QUI::getDataBase()->fetch([
-                'from' => self::table(),
-                'where' => [
-                    'id' => $Area->getId()
-                ],
-                'limit' => 1
-            ]);
-        } catch (Exception) {
+            $QueryBuilder = QUI::getQueryBuilder();
+            $result = $QueryBuilder
+                ->select('ocp')
+                ->from(Doctrine::quoteIdentifier(self::table()))
+                ->where($QueryBuilder->expr()->eq('id', ':id'))
+                ->setParameter('id', $Area->getId())
+                ->setMaxResults(1)
+                ->executeQuery()
+                ->fetchAssociative();
+        } catch (\Exception) {
             return 0;
         }
 
-        if (!isset($result[0]) || !isset($result[0]['ocp'])) {
+        if (!is_array($result) || !isset($result['ocp'])) {
             return 0;
         }
 
-        return (int)$result[0]['ocp'];
+        return (int)$result['ocp'];
     }
 
     /**
@@ -64,16 +67,18 @@ class OCP
         $result = [];
 
         try {
-            $list = QUI::getDataBase()->fetch([
-                'from' => self::table()
-            ]);
-        } catch (Exception) {
+            $list = QUI::getQueryBuilder()
+                ->select('id', 'ocp')
+                ->from(Doctrine::quoteIdentifier(self::table()))
+                ->executeQuery()
+                ->fetchAllAssociative();
+        } catch (\Exception) {
             return [];
         }
 
         foreach ($list as $entry) {
             try {
-                $Area = $Areas->getChild($entry['id']);
+                $Area = $Areas->getChild((int)$entry['id']);
 
                 if (!isset($entry['ocp'])) {
                     $entry['ocp'] = 0;
@@ -98,14 +103,14 @@ class OCP
      * Activate order cancellation policy for the area
      *
      * @param int|string $areaId
-     * @throws QUI\Database\Exception
+     * @throws \Doctrine\DBAL\Exception
      */
     public static function activate(int | string $areaId): void
     {
         // @todo permissions
 
-        QUI::getDataBase()->update(
-            self::table(),
+        QUI::getDataBaseConnection()->update(
+            Doctrine::quoteIdentifier(self::table()),
             ['ocp' => 1],
             ['id' => $areaId]
         );
@@ -115,14 +120,14 @@ class OCP
      * Deactivate order cancellation policy for the area
      *
      * @param string|int $areaId
-     * @throws QUI\Database\Exception
+     * @throws \Doctrine\DBAL\Exception
      */
     public static function deactivate(string | int $areaId): void
     {
         // @todo permissions
 
-        QUI::getDataBase()->update(
-            self::table(),
+        QUI::getDataBaseConnection()->update(
+            Doctrine::quoteIdentifier(self::table()),
             ['ocp' => 0],
             ['id' => $areaId]
         );
