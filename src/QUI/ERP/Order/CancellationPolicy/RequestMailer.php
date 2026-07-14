@@ -27,8 +27,7 @@ class RequestMailer
         array $data,
         ?QUI\Projects\Project $Project = null,
         ?QUI\Projects\Site $Site = null
-    ): void
-    {
+    ): void {
         $recipient = CancellationFormHelper::getMailRecipient();
 
         if (!QUI\Utils\Security\Orthos::checkMailSyntax($recipient)) {
