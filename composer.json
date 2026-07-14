@@ -2,18 +2,21 @@
     "name": "quiqqer/order-cancellation-policy",
     "type": "quiqqer-module",
     "description": "This module is for shops in Europe that sell to private customers. With this module it is possible to indicate a cancellation policy for certain areas.",
-    "license": "GPL-3.0+",
+    "homepage": "https://www.quiqqer.com",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
-            "name": "Henning Leutz",
-            "email": "support@pcsg.de",
-            "homepage": "https://www.pcsg.de",
-            "role": "Developer"
+            "name": "PCSG - Computer & Internet Service OHG",
+            "email": "info@quiqqer.com",
+            "homepage": "https://www.quiqqer.com",
+            "role": "Maintainer"
         }
     ],
     "support": {
         "email": "support@pcsg.de",
-        "url": "https://www.pcsg.de"
+        "url": "https://www.quiqqer.com",
+        "source": "https://dev.quiqqer.com/quiqqer/order-cancellation-policy",
+        "issues": "https://dev.quiqqer.com/quiqqer/order-cancellation-policy/issues"
     },
     "require": {
         "php": "^8",
