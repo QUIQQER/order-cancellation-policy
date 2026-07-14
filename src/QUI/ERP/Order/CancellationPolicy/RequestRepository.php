@@ -3,6 +3,7 @@
 namespace QUI\ERP\Order\CancellationPolicy;
 
 use QUI;
+use QUI\Utils\Doctrine;
 
 class RequestRepository
 {
@@ -23,15 +24,15 @@ class RequestRepository
      *     privacyPolicyAccepted: bool,
      *     captchaResponse: string
      * } $data
-     * @throws QUI\Database\Exception
+     * @throws \Doctrine\DBAL\Exception
      */
     public static function create(
         array $data,
         ?QUI\Projects\Project $Project = null,
         ?QUI\Projects\Site $Site = null
     ): void {
-        QUI::getDataBase()->insert(
-            self::table(),
+        QUI::getDataBaseConnection()->insert(
+            Doctrine::quoteIdentifier(self::table()),
             [
                 'project' => $Project?->getName(),
                 'lang' => $Project?->getLang(),

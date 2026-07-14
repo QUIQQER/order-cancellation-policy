@@ -150,11 +150,7 @@
         <div class="quiqqer-order-cancellation-policy-cancellationForm__captcha"
              data-name="captcha-container"
         >
-            <span class="quiqqer-order-cancellation-policy-cancellationForm__captchaLabel">
-                {locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.captcha"}
-            </span>
             {$CaptchaDisplay->create()}
-            <input type="hidden" name="captchaResponse" data-name="captcha-response">
         </div>
         {/if}
 
