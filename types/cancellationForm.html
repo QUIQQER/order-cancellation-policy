@@ -1,3 +1,9 @@
+{if $Template->getAttribute('content-body') && $Site->getAttribute('content')}
+<section class="content-body">
+    {$Site->getAttribute('content')}
+</section>
+{/if}
+
 <section class="content-template">
     {$CancellationForm->create()}
 </section>
