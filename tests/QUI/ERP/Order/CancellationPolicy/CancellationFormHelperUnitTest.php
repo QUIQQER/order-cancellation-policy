@@ -37,6 +37,12 @@ class CancellationFormHelperUnitTest extends TestCase
         $this->assertSame('', CancellationFormHelper::normalizeOrderDateForRequest('invalid-date'));
     }
 
+    public function testNormalizeOrderDateForRequestAcceptsEmptyOptionalValue(): void
+    {
+        $this->assertSame('', CancellationFormHelper::normalizeOrderDateForRequest('  '));
+        $this->assertSame('', CancellationFormHelper::getPrefilledOrderDateFromRequest());
+    }
+
     public function testGetPrefilledOrderDateFromRequestReturnsNormalizedDate(): void
     {
         $_GET['orderDate'] = '2026-06-15 13:48:46';

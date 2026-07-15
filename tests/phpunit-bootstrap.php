@@ -11,10 +11,28 @@ if (!defined('QUIQQER_AJAX')) {
 putenv('QUIQQER_OTHER_AUTOLOADERS=KEEP');
 
 require_once __DIR__ . '/../../../../bootstrap.php';
+require_once __DIR__ . '/stubs/QUI/Captcha/Controls/CaptchaDisplay.php';
+require_once __DIR__ . '/stubs/QUI/Captcha/Handler.php';
+require_once __DIR__ . '/stubs/QUI/ERP/Order/SimpleCheckout/Checkout.php';
 
-QUI\Autoloader::$ComposerLoader?->addPsr4(
-    'QUI\\ERP\\Order\\CancellationPolicy\\',
-    dirname(__DIR__) . '/src/QUI/ERP/Order/CancellationPolicy'
+$cancellationPolicyPrefix = 'QUI\\ERP\\Order\\CancellationPolicy\\';
+$cancellationPolicySource = dirname(__DIR__) . '/src/QUI/ERP/Order/CancellationPolicy/';
+
+spl_autoload_register(
+    static function (string $className) use ($cancellationPolicyPrefix, $cancellationPolicySource): void {
+        if (!str_starts_with($className, $cancellationPolicyPrefix)) {
+            return;
+        }
+
+        $relativeClass = substr($className, strlen($cancellationPolicyPrefix));
+        $file = $cancellationPolicySource . str_replace('\\', '/', $relativeClass) . '.php';
+
+        if (is_file($file)) {
+            require_once $file;
+        }
+    },
+    true,
+    true
 );
 
 $SchemaManager = QUI::getSchemaManager();
@@ -52,5 +70,15 @@ if ($areasCount === 0) {
         QUI\ERP\Areas\Import::importPreconfigureAreas('DigitalGoodsFromEuropaToEuropa.xml');
     } finally {
         $PermissionUser->setValue(null, $previousPermissionUser);
+    }
+
+    $areasCount = (int)QUI::getQueryBuilder()
+        ->select('COUNT(*)')
+        ->from(QUI\Utils\Doctrine::quoteIdentifier($areasTable))
+        ->executeQuery()
+        ->fetchOne();
+
+    if ($areasCount === 0) {
+        throw new RuntimeException('The standard area test fixtures could not be imported.');
     }
 }

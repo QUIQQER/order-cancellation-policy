@@ -103,6 +103,25 @@ class FormSubmissionDatabaseTest extends TestCase
         self::assertStringNotContainsString('<script>', $body);
     }
 
+    public function testMailFailureKeepsPersistedCancellationRequest(): void
+    {
+        $email = self::EMAIL_PREFIX . bin2hex(random_bytes(6)) . '@example.test';
+        $Mailer = $this->createMock(Mailer::class);
+        $Mailer->method('send')->willThrowException(new \Exception('PHPUnit mail transport failure'));
+        $MailManager = $this->createMock(MailManager::class);
+        $MailManager->method('getMailer')->willReturn($Mailer);
+        QUI::$MailManager = $MailManager;
+        $data = $this->validData();
+        $data['email'] = $email;
+
+        try {
+            FormSubmission::submit($data);
+            self::fail('The failed mail transport must reject the form response.');
+        } catch (QUI\Exception) {
+            self::assertSame($email, $this->findRequest($email)['email']);
+        }
+    }
+
     /**
      * @param array<string, mixed> $changes
      */
