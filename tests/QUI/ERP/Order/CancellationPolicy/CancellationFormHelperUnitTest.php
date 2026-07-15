@@ -1,8 +1,9 @@
 <?php
 
-namespace QUI\ERP\Order\CancellationPolicy;
+namespace QUITests\ERP\Order\CancellationPolicy;
 
 use PHPUnit\Framework\TestCase;
+use QUI\ERP\Order\CancellationPolicy\CancellationFormHelper;
 
 class CancellationFormHelperUnitTest extends TestCase
 {
