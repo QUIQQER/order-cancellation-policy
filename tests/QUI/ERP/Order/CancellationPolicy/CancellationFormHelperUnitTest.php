@@ -1,8 +1,9 @@
 <?php
 
-namespace QUI\ERP\Order\CancellationPolicy;
+namespace QUITests\ERP\Order\CancellationPolicy;
 
 use PHPUnit\Framework\TestCase;
+use QUI\ERP\Order\CancellationPolicy\CancellationFormHelper;
 
 class CancellationFormHelperUnitTest extends TestCase
 {
@@ -34,6 +35,12 @@ class CancellationFormHelperUnitTest extends TestCase
     public function testNormalizeOrderDateForRequestReturnsEmptyStringForInvalidValue(): void
     {
         $this->assertSame('', CancellationFormHelper::normalizeOrderDateForRequest('invalid-date'));
+    }
+
+    public function testNormalizeOrderDateForRequestAcceptsEmptyOptionalValue(): void
+    {
+        $this->assertSame('', CancellationFormHelper::normalizeOrderDateForRequest('  '));
+        $this->assertSame('', CancellationFormHelper::getPrefilledOrderDateFromRequest());
     }
 
     public function testGetPrefilledOrderDateFromRequestReturnsNormalizedDate(): void
