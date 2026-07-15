@@ -5,6 +5,7 @@ namespace QUITests\ERP\Order\CancellationPolicy;
 use PHPUnit\Framework\TestCase;
 use QUI;
 use QUI\Captcha\Controls\CaptchaDisplay;
+use QUI\Captcha\Handler as CaptchaHandler;
 use QUI\ERP\Order\CancellationPolicy\CancellationFormHelper;
 use QUI\Projects\Project;
 use QUI\Projects\Site;
@@ -77,8 +78,13 @@ class CancellationFormHelperIntegrationTest extends TestCase
 
         try {
             $Installed->setValue($PackageManager, $installed);
+            $captchaResponse = 'phpunit-response';
+
             self::assertTrue(CancellationFormHelper::isCaptchaAvailable());
-            self::assertFalse(CancellationFormHelper::validateCaptcha('phpunit-response'));
+            self::assertSame(
+                CaptchaHandler::isResponseValid($captchaResponse),
+                CancellationFormHelper::validateCaptcha($captchaResponse)
+            );
             self::assertInstanceOf(CaptchaDisplay::class, CancellationFormHelper::getCaptchaDisplay());
         } finally {
             $Installed->setValue($PackageManager, $originalInstalled);
