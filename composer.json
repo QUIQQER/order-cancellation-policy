@@ -19,16 +19,21 @@
         "issues": "https://dev.quiqqer.com/quiqqer/order-cancellation-policy/issues"
     },
     "require": {
-        "php": "^8",
-        "quiqqer/core": "^2",
-        "quiqqer/order": "^2",
+        "php": "^8.2",
+        "quiqqer/core": "^2.25",
+        "quiqqer/order": "^2.10",
         "quiqqer/areas": "^2",
-        "quiqqer/erp": "^3.2"
+        "quiqqer/erp": "^3.14.2",
+        "quiqqer/frontend-users": "^2"
     },
     "autoload": {
         "psr-4": {
-            "QUI\\ERP\\Order\\": "src/QUI/ERP/Order",
-            "QUITests\\ERP\\Order\\": "tests/QUITests/ERP/Order"
+            "QUI\\ERP\\Order\\CancellationPolicy\\": "src/QUI/ERP/Order/CancellationPolicy"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "QUITests\\ERP\\Order\\CancellationPolicy\\": "tests/QUI/ERP/Order/CancellationPolicy"
         }
     },
     "scripts": {

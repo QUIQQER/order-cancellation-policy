@@ -86,22 +86,22 @@
         <div class="quiqqer-order-cancellation-policy-cancellationForm__grid">
             <label class="quiqqer-order-cancellation-policy-cancellationForm__field">
                 <span>{locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.firstName"} *</span>
-                <input type="text" name="firstName" data-name="first-name" value="{$prefilledFirstName}" required>
+                <input type="text" name="firstName" data-name="first-name" value="{$prefilledFirstName|escape:'html'}" required>
             </label>
 
             <label class="quiqqer-order-cancellation-policy-cancellationForm__field">
                 <span>{locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.lastName"} *</span>
-                <input type="text" name="lastName" data-name="last-name" value="{$prefilledLastName}" required>
+                <input type="text" name="lastName" data-name="last-name" value="{$prefilledLastName|escape:'html'}" required>
             </label>
 
             <label class="quiqqer-order-cancellation-policy-cancellationForm__field">
                 <span>{locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.email"} *</span>
-                <input type="email" name="email" data-name="email" value="{$prefilledEmail}" required>
+                <input type="email" name="email" data-name="email" value="{$prefilledEmail|escape:'html'}" required>
             </label>
 
             <label class="quiqqer-order-cancellation-policy-cancellationForm__field">
                 <span>{locale group="quiqqer/order-cancellation-policy" var="control.cancellationForm.phone"}</span>
-                <input type="text" name="phone" data-name="phone" value="{$prefilledPhone}">
+                <input type="text" name="phone" data-name="phone" value="{$prefilledPhone|escape:'html'}">
             </label>
 
             <label class="quiqqer-order-cancellation-policy-cancellationForm__field">
@@ -109,7 +109,7 @@
                 <input type="text"
                        name="orderNo"
                        data-name="order-no"
-                       value="{$prefilledOrderNo}"
+                       value="{$prefilledOrderNo|escape:'html'}"
                        {if $orderNoReadonly}readonly aria-readonly="true"{/if}
                        required
                 >
@@ -120,7 +120,7 @@
                 <input type="date"
                        name="orderDate"
                        data-name="order-date"
-                       value="{$prefilledOrderDate}"
+                       value="{$prefilledOrderDate|escape:'html'}"
                        {if $orderDateReadonly}readonly aria-readonly="true"{/if}
                 >
             </label>
