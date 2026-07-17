@@ -20,11 +20,16 @@
     },
     "require": {
         "php": "^8.2",
-        "quiqqer/core": "^2.25",
+        "ext-mbstring": "*",
+        "quiqqer/core": "^2.25.1",
         "quiqqer/order": "^2.10",
         "quiqqer/areas": "^2",
         "quiqqer/erp": "^4",
-        "quiqqer/frontend-users": "^2"
+        "quiqqer/frontend-users": "^2",
+        "quiqqer/translator": "^2"
+    },
+    "suggest": {
+        "quiqqer/captcha": "Protects cancellation form submissions with a CAPTCHA."
     },
     "autoload": {
         "psr-4": {
