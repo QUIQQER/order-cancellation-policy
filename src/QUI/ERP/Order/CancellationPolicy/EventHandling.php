@@ -87,7 +87,7 @@ class EventHandling
             $Customer = QUI::getUserBySession();
         }
 
-        if (!$Address || !$Customer) {
+        if (!$Address) {
             return null;
         }
 

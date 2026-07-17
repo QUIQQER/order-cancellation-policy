@@ -23,7 +23,7 @@
         "quiqqer/core": "^2.25",
         "quiqqer/order": "^2.10",
         "quiqqer/areas": "^2",
-        "quiqqer/erp": "^3.14.2",
+        "quiqqer/erp": "^4",
         "quiqqer/frontend-users": "^2"
     },
     "autoload": {
