@@ -78,7 +78,7 @@ class EventHandlingFlowTest extends TestCase
     public function testAppendsPrefilledCancellationLinkToFrontendOrder(): void
     {
         $CancellationSite = $this->createMock(Site::class);
-        $CancellationSite->method('getUrlRewritten')->willReturn('/widerruf');
+        $CancellationSite->method('getUrlRewritten')->willReturn('/widerruf" onclick="alert(1)');
         $Project = $this->createMock(Project::class);
         $Project->method('getSites')->willReturn([$CancellationSite]);
         $Rewrite = $this->createMock(Rewrite::class);
@@ -98,8 +98,12 @@ class EventHandlingFlowTest extends TestCase
         EventHandling::templateFrontendUserOrderFooterEnd($Collector, $Order);
 
         $html = $Collector->getContent();
-        self::assertStringContainsString('/widerruf?orderNo=ORDER-2026-42', $html);
+        self::assertStringContainsString(
+            '/widerruf&quot; onclick=&quot;alert(1)?orderNo=ORDER-2026-42',
+            $html
+        );
         self::assertStringContainsString('orderDate=2026-07-15', $html);
+        self::assertStringNotContainsString('onclick="alert(1)"', $html);
     }
 
     public function testCheckoutEventsReplaceTextWithCancellationPolicy(): void
