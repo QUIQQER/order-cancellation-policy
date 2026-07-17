@@ -7,6 +7,7 @@ use QUI\ERP\Order\CancellationPolicy\CancellationFormHelper;
 use QUI\FrontendUsers\Handler as FrontendUsersHandler;
 
 use function dirname;
+use function htmlspecialchars;
 use function preg_replace;
 use function str_replace;
 
@@ -61,8 +62,11 @@ class CancellationForm extends QUI\Control
                 'quiqqer/order-cancellation-policy',
                 'control.cancellationForm.privacyPolicy.label',
                 [
-                    'privacyPolicyLink' => '<a href="' . $PrivacyPolicySite->getUrlRewrittenWithHost()
-                        . '" data-name="privacy-link">' . $PrivacyPolicySite->getAttribute('title') . '</a>'
+                    'privacyPolicyLink' => '<a href="'
+                        . htmlspecialchars($PrivacyPolicySite->getUrlRewrittenWithHost(), ENT_QUOTES)
+                        . '" data-name="privacy-link">'
+                        . htmlspecialchars((string)$PrivacyPolicySite->getAttribute('title'), ENT_QUOTES)
+                        . '</a>'
                 ]
             );
 

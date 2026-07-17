@@ -12,6 +12,8 @@ use QUI\ERP\Order\Controls\AbstractOrderingStep;
 use QUI\ERP\Order\OrderView;
 use QUI\Smarty\Collector;
 
+use function htmlspecialchars;
+
 /**
  * Class EventHandling
  *
@@ -177,6 +179,9 @@ class EventHandling
             $Order->getPrefixedId(),
             (string)($orderData['cDate'] ?? '')
         );
+        $label = htmlspecialchars($label, ENT_QUOTES);
+        $linkText = htmlspecialchars($linkText, ENT_QUOTES);
+        $url = htmlspecialchars($url, ENT_QUOTES);
 
         return '<div class="quiqqer-order-profile-orders-order__group '
             . 'quiqqer-order-profile-orders-order-footer-cancellationForm">'
