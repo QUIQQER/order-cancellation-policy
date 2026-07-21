@@ -66,19 +66,9 @@ class CancellationFormHelper
 
     public static function getSuccessText(?QUI\Projects\Project $Project = null): string
     {
-        $successText = trim((string)QUI::getLocale()->get(
-            'quiqqer/order-cancellation-policy',
-            'frontend.cancellationForm.successText'
-        ));
+        $successText = self::getConfiguredSuccessText();
 
-        if (
-            $successText !== ''
-            && !self::isMissingLocalePlaceholder(
-                $successText,
-                'quiqqer/order-cancellation-policy',
-                'frontend.cancellationForm.successText'
-            )
-        ) {
+        if ($successText !== '') {
             return $successText;
         }
 
@@ -86,6 +76,27 @@ class CancellationFormHelper
             'quiqqer/order-cancellation-policy',
             'control.cancellationForm.success'
         );
+    }
+
+    public static function getConfiguredSuccessText(): string
+    {
+        $successText = trim((string)QUI::getLocale()->get(
+            'quiqqer/order-cancellation-policy',
+            'frontend.cancellationForm.successText'
+        ));
+
+        if (
+            $successText === ''
+            || self::isMissingLocalePlaceholder(
+                $successText,
+                'quiqqer/order-cancellation-policy',
+                'frontend.cancellationForm.successText'
+            )
+        ) {
+            return '';
+        }
+
+        return $successText;
     }
 
     public static function isCaptchaEnabled(): bool

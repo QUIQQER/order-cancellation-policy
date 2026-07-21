@@ -26,9 +26,11 @@
     <div class="quiqqer-order-cancellation-policy-cancellationForm__successDetails"
          data-name="success-details"
     >
-        <h2 class="quiqqer-order-cancellation-policy-cancellationForm__successTitle">
-            {$successHeadline|escape:'html'}
-        </h2>
+        {if $showDefaultSuccessContext}
+            <h2 class="quiqqer-order-cancellation-policy-cancellationForm__successTitle">
+                {$successHeadline|escape:'html'}
+            </h2>
+        {/if}
 
         {if $successText}
         <div class="quiqqer-order-cancellation-policy-cancellationForm__successText default-content">
@@ -36,9 +38,11 @@
         </div>
         {/if}
 
-        <p class="quiqqer-order-cancellation-policy-cancellationForm__successHint">
-            {$successHint|escape:'html'}
-        </p>
+        {if $showDefaultSuccessContext}
+            <p class="quiqqer-order-cancellation-policy-cancellationForm__successHint">
+                {$successHint|escape:'html'}
+            </p>
+        {/if}
 
         {if $startSiteUrl || $profileSiteUrl}
         <div class="quiqqer-order-cancellation-policy-cancellationForm__successMeta">
