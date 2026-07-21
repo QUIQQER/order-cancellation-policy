@@ -56,6 +56,14 @@ class CancellationFormControlTest extends TestCase
         ]))->renderContentOnly();
 
         self::assertStringContainsString('PHPUnit cancellation accepted', $html);
+        self::assertStringNotContainsString(
+            'quiqqer-order-cancellation-policy-cancellationForm__successTitle',
+            $html
+        );
+        self::assertStringNotContainsString(
+            'quiqqer-order-cancellation-policy-cancellationForm__successHint',
+            $html
+        );
         self::assertStringNotContainsString('name="firstName"', $html);
     }
 
