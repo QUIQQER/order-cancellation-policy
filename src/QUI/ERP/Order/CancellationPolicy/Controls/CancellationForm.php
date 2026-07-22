@@ -75,6 +75,8 @@ class CancellationForm extends QUI\Control
 
         $introText = (string)$this->getAttribute('introText');
         $successText = (string)$this->getAttribute('successText');
+        $showDefaultSuccessContext = $successText === ''
+            && CancellationFormHelper::getConfiguredSuccessText() === '';
         $prefilledOrderNo = CancellationFormHelper::getPrefilledOrderNoFromRequest();
         $prefilledOrderDate = CancellationFormHelper::getPrefilledOrderDateFromRequest();
         $prefilledUserData = CancellationFormHelper::getPrefilledUserData();
@@ -114,6 +116,7 @@ class CancellationForm extends QUI\Control
             'this' => $this,
             'introText' => $introText,
             'successText' => $successText,
+            'showDefaultSuccessContext' => $showDefaultSuccessContext,
             'mode' => (string)$this->getAttribute('mode'),
             'renderOnlyContent' => (bool)$this->getAttribute('renderOnlyContent'),
             'successHeadline' => QUI::getLocale()->get(
