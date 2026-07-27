@@ -1,6 +1,7 @@
 .quiqqer-order-cancellation-policy-cancellationForm {
     display: grid;
     gap: 1.5rem;
+    position: relative;
 }
 
 .quiqqer-order-cancellation-policy-cancellationForm [hidden] {
