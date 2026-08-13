@@ -34,7 +34,7 @@ define('package/quiqqer/order-cancellation-policy/bin/frontend/controls/Cancella
             const root = this.getElm();
             const container = root.querySelector('[data-name="cancellation-form"]') || root;
             const view = container.querySelector('[data-name="view"]');
-            const form = container.querySelector('[data-name="form"]');
+            const form = this.$getForm(container);
             const errorContainer = container.querySelector('[data-name="error"]');
 
             if (!form || !view) {
@@ -55,6 +55,30 @@ define('package/quiqqer/order-cancellation-policy/bin/frontend/controls/Cancella
 
             this.registerPrivacyPopup();
             this.registerCaptchaHandling();
+        },
+
+        /**
+         * Returns the actual cancellation form within the control.
+         *
+         * The intro text is an editable WYSIWYG field and may accidentally contain its
+         * own [data-name="form"] elements (e.g. an empty <form> left behind by the
+         * editor). A plain querySelector would then match the wrong, empty form and the
+         * submit handler would sit on the wrong element. The real form is therefore
+         * identified via its submit button.
+         *
+         * @param {HTMLElement} container
+         * @return {HTMLFormElement|null}
+         */
+        $getForm: function (container) {
+            const forms = container.querySelectorAll('[data-name="form"]');
+
+            for (const candidate of forms) {
+                if (candidate.querySelector('[data-name="submit"]')) {
+                    return candidate;
+                }
+            }
+
+            return forms[0] || null;
         },
 
         registerPrivacyPopup: function () {
@@ -109,7 +133,7 @@ define('package/quiqqer/order-cancellation-policy/bin/frontend/controls/Cancella
             const root = this.getElm();
             const container = root.querySelector('[data-name="cancellation-form"]') || root;
             const view = container.querySelector('[data-name="view"]');
-            const form = container.querySelector('[data-name="form"]');
+            const form = this.$getForm(container);
             const errorContainer = container.querySelector('[data-name="error"]');
 
             if (!form || !view || !errorContainer) {
