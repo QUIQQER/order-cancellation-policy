@@ -8,6 +8,22 @@
             <locale group="quiqqer/order-cancellation-policy" var="package.description"/>
         </description>
 
+        <capabilities schemaVersion="1">
+            <capability id="commerce.order-cancellation-policy">
+                <title>Order Cancellation Policy</title>
+                <description>
+                    Adds area-specific consumer cancellation notices and acceptance links to eligible order checkouts.
+                </description>
+            </capability>
+
+            <capability id="commerce.order-cancellation-requests">
+                <title>Order Cancellation Requests</title>
+                <description>
+                    Provides a prefilled cancellation form that validates, stores and emails privacy-confirmed requests, with optional CAPTCHA protection.
+                </description>
+            </capability>
+        </capabilities>
+
         <support>
             <email><![CDATA[support@pcsg.de]]></email>
             <forum><![CDATA[https://community.quiqqer.com]]></forum>
