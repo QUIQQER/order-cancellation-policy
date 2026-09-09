@@ -5,6 +5,11 @@
         <locale name="package.title">
             <de><![CDATA[QUIQQER - Shop - Widerrufsbelehrung]]></de>
             <en><![CDATA[QUIQQER - Shop - Cancellation policy]]></en>
+            <es><![CDATA[QUIQQER - Tienda - Información sobre el derecho de desistimiento]]></es>
+            <pt><![CDATA[QUIQQER - Loja - Informação sobre o direito de livre resolução]]></pt>
+            <fr><![CDATA[QUIQQER - Boutique - Informations sur le droit de rétractation]]></fr>
+            <it><![CDATA[QUIQQER - Negozio - Informativa sul diritto di recesso]]></it>
+            <pl><![CDATA[QUIQQER - Sklep - Informacje o prawie odstąpienia od umowy]]></pl>
         </locale>
         <locale name="package.description">
             <de><![CDATA[
@@ -15,70 +20,169 @@
             ]]></de>
             <en><![CDATA[
             This module is for shops in Europe that sell to private customers.
-            With this module it is possible to indicate a cancellation policy for certain areas.
+            It allows a cancellation policy to be specified for selected areas.
 
-            The revocation instruction is a instruction about the right of revocation
-            of a consumer with certain consumer contracts.
+            The cancellation policy explains the consumer’s right of withdrawal under certain consumer contracts.
             ]]></en>
+            <es><![CDATA[
+            Este módulo está dirigido a empresas de Europa que venden a consumidores.
+            Permite definir la información sobre el derecho de desistimiento para determinadas zonas.
+
+            Esta información explica el derecho del consumidor a desistir de determinados contratos de consumo.
+            ]]></es>
+            <pt><![CDATA[
+            Este módulo destina-se a empresas na Europa que vendem a consumidores.
+            Permite definir a informação sobre o direito de livre resolução para determinadas zonas.
+
+            Esta informação explica o direito de livre resolução do consumidor em determinados contratos de consumo.
+            ]]></pt>
+            <fr><![CDATA[
+            Ce module s’adresse aux entreprises en Europe qui vendent aux particuliers.
+            Il permet de définir les informations sur le droit de rétractation pour certaines zones.
+
+            Ces informations expliquent le droit de rétractation du consommateur dans le cadre de certains contrats de consommation.
+            ]]></fr>
+            <it><![CDATA[
+            Questo modulo è destinato alle aziende in Europa che vendono ai consumatori.
+            Consente di definire l’informativa sul diritto di recesso per determinate zone.
+
+            L’informativa illustra il diritto di recesso del consumatore per determinati contratti di consumo.
+            ]]></it>
+            <pl><![CDATA[
+            Ten moduł jest przeznaczony dla firm w Europie prowadzących sprzedaż konsumentom.
+            Umożliwia określenie informacji o prawie odstąpienia od umowy dla wybranych stref.
+
+            Informacje te wyjaśniają prawo konsumenta do odstąpienia od niektórych umów konsumenckich.
+            ]]></pl>
         </locale>
 
         <locale name="window.erp.order.title">
             <de><![CDATA[Widerrufsbelehrung]]></de>
             <en><![CDATA[Cancellation policy]]></en>
+            <es><![CDATA[Información sobre el derecho de desistimiento]]></es>
+            <pt><![CDATA[Informação sobre o direito de livre resolução]]></pt>
+            <fr><![CDATA[Informations sur le droit de rétractation]]></fr>
+            <it><![CDATA[Informativa sul diritto di recesso]]></it>
+            <pl><![CDATA[Informacje o prawie odstąpienia od umowy]]></pl>
         </locale>
 
         <locale name="setting.settings.title">
             <de><![CDATA[Widerrufsbelehrung]]></de>
             <en><![CDATA[Cancellation policy]]></en>
+            <es><![CDATA[Información sobre el derecho de desistimiento]]></es>
+            <pt><![CDATA[Informação sobre o direito de livre resolução]]></pt>
+            <fr><![CDATA[Informations sur le droit de rétractation]]></fr>
+            <it><![CDATA[Informativa sul diritto di recesso]]></it>
+            <pl><![CDATA[Informacje o prawie odstąpienia od umowy]]></pl>
         </locale>
         <locale name="areas.settings.title">
             <de><![CDATA[Für welche Zonen möchten Sie die Widerrufsbelehrung aktivieren?]]></de>
             <en><![CDATA[For which areas would you like to activate the cancellation policy?]]></en>
+            <es><![CDATA[¿En qué zonas desea activar la información sobre el derecho de desistimiento?]]></es>
+            <pt><![CDATA[Para que zonas pretende ativar a informação sobre o direito de livre resolução?]]></pt>
+            <fr><![CDATA[Pour quelles zones souhaitez-vous activer les informations sur le droit de rétractation ?]]></fr>
+            <it><![CDATA[Per quali zone desideri attivare l’informativa sul diritto di recesso?]]></it>
+            <pl><![CDATA[Dla których stref chcesz włączyć informacje o prawie odstąpienia od umowy?]]></pl>
         </locale>
 
         <locale name="settings.frontend.title">
             <de><![CDATA[Widerrufsformular]]></de>
             <en><![CDATA[Cancellation form]]></en>
+            <es><![CDATA[Formulario de desistimiento]]></es>
+            <pt><![CDATA[Formulário de livre resolução]]></pt>
+            <fr><![CDATA[Formulaire de rétractation]]></fr>
+            <it><![CDATA[Modulo di recesso]]></it>
+            <pl><![CDATA[Formularz odstąpienia od umowy]]></pl>
         </locale>
         <locale name="admin.types.cancellationForm">
             <de><![CDATA[Widerrufsformular]]></de>
             <en><![CDATA[Cancellation form]]></en>
+            <es><![CDATA[Formulario de desistimiento]]></es>
+            <pt><![CDATA[Formulário de livre resolução]]></pt>
+            <fr><![CDATA[Formulaire de rétractation]]></fr>
+            <it><![CDATA[Modulo di recesso]]></it>
+            <pl><![CDATA[Formularz odstąpienia od umowy]]></pl>
         </locale>
         <locale name="admin.types.cancellationForm.description">
             <de><![CDATA[Seite für das wiederverwendbare Widerrufsformular.]]></de>
             <en><![CDATA[Page type for the reusable cancellation form.]]></en>
+            <es><![CDATA[Tipo de página para el formulario de desistimiento reutilizable.]]></es>
+            <pt><![CDATA[Tipo de página para o formulário de livre resolução reutilizável.]]></pt>
+            <fr><![CDATA[Type de page pour le formulaire de rétractation réutilisable.]]></fr>
+            <it><![CDATA[Tipo di pagina per il modulo di recesso riutilizzabile.]]></it>
+            <pl><![CDATA[Typ strony z formularzem odstąpienia od umowy do wielokrotnego użytku.]]></pl>
         </locale>
         <locale name="settings.frontend.mailTo.title">
             <de><![CDATA[Empfänger-E-Mail]]></de>
             <en><![CDATA[Recipient email]]></en>
+            <es><![CDATA[Correo electrónico del destinatario]]></es>
+            <pt><![CDATA[Email do destinatário]]></pt>
+            <fr><![CDATA[Adresse e-mail du destinataire]]></fr>
+            <it><![CDATA[Email del destinatario]]></it>
+            <pl><![CDATA[Adres e-mail odbiorcy]]></pl>
         </locale>
         <locale name="settings.frontend.mailTo.description" html="1">
             <de><![CDATA[Adresse für Benachrichtigungen aus dem Widerrufsformular. Bei leerem oder ungültigem Wert wird auf <b>mail.admin_mail</b> zurückgefallen.]]></de>
             <en><![CDATA[Address for notifications from the cancellation form. If empty or invalid, <b>mail.admin_mail</b> is used as fallback.]]></en>
+            <es><![CDATA[Dirección para las notificaciones del formulario de desistimiento. Si está vacía o no es válida, se utiliza <b>mail.admin_mail</b>.]]></es>
+            <pt><![CDATA[Endereço para as notificações do formulário de livre resolução. Se estiver vazio ou for inválido, é utilizado <b>mail.admin_mail</b>.]]></pt>
+            <fr><![CDATA[Adresse de réception des notifications du formulaire de rétractation. Si elle est vide ou invalide, <b>mail.admin_mail</b> est utilisé par défaut.]]></fr>
+            <it><![CDATA[Indirizzo per le notifiche del modulo di recesso. Se vuoto o non valido, viene utilizzato <b>mail.admin_mail</b>.]]></it>
+            <pl><![CDATA[Adres do powiadomień z formularza odstąpienia od umowy. Jeśli jest pusty lub nieprawidłowy, używany jest adres z ustawienia <b>mail.admin_mail</b>.]]></pl>
         </locale>
         <locale name="settings.frontend.useCaptcha.title">
             <de><![CDATA[CAPTCHA aktivieren]]></de>
             <en><![CDATA[Enable CAPTCHA]]></en>
+            <es><![CDATA[Activar CAPTCHA]]></es>
+            <pt><![CDATA[Ativar CAPTCHA]]></pt>
+            <fr><![CDATA[Activer le CAPTCHA]]></fr>
+            <it><![CDATA[Attiva CAPTCHA]]></it>
+            <pl><![CDATA[Włącz CAPTCHA]]></pl>
         </locale>
         <locale name="settings.frontend.useCaptcha.description" html="true">
             <de><![CDATA[Formularversand per CAPTCHA schützen. Standardmäßig aktiv. Erfordert <b>quiqqer/captcha</b> und eine funktionierende Konfiguration.]]></de>
             <en><![CDATA[Protect the form submission with a CAPTCHA. Enabled by default. Requires <b>quiqqer/captcha</b> and a working configuration.]]></en>
+            <es><![CDATA[Protege el envío del formulario con un CAPTCHA. Activado de forma predeterminada. Requiere <b>quiqqer/captcha</b> y una configuración que funcione correctamente.]]></es>
+            <pt><![CDATA[Protege o envio do formulário com um CAPTCHA. Ativado por predefinição. Requer <b>quiqqer/captcha</b> e uma configuração funcional.]]></pt>
+            <fr><![CDATA[Protège l’envoi du formulaire par un CAPTCHA. Activé par défaut. Nécessite <b>quiqqer/captcha</b> et une configuration fonctionnelle.]]></fr>
+            <it><![CDATA[Protegge l’invio del modulo con un CAPTCHA. Attivato per impostazione predefinita. Richiede <b>quiqqer/captcha</b> e una configurazione funzionante.]]></it>
+            <pl><![CDATA[Chroni wysyłanie formularza za pomocą CAPTCHA. Domyślnie włączone. Wymaga <b>quiqqer/captcha</b> oraz działającej konfiguracji.]]></pl>
         </locale>
         <locale name="settings.frontend.introText.title">
             <de><![CDATA[Einleitung / Hinweistext]]></de>
             <en><![CDATA[Intro / notice text]]></en>
+            <es><![CDATA[Texto introductorio / aviso]]></es>
+            <pt><![CDATA[Texto introdutório / aviso]]></pt>
+            <fr><![CDATA[Texte d’introduction / d’information]]></fr>
+            <it><![CDATA[Testo introduttivo / avviso]]></it>
+            <pl><![CDATA[Tekst wprowadzający / informacyjny]]></pl>
         </locale>
         <locale name="settings.frontend.introText.description">
             <de><![CDATA[Optionaler Text oberhalb des Widerrufsformulars. Wenn leer, wird im Frontend der Default-Text aus der Locale <code>control.cancellationForm.intro.default</code> angezeigt.]]></de>
-            <en><![CDATA[Optional text displayed above the cancellation form.]]></en>
+            <en><![CDATA[Optional text displayed above the cancellation form. If empty, the default text from the locale key <code>control.cancellationForm.intro.default</code> is displayed in the frontend.]]></en>
+            <es><![CDATA[Texto opcional que se muestra encima del formulario de desistimiento. Si está vacío, se muestra el texto predeterminado de la clave de traducción <code>control.cancellationForm.intro.default</code>.]]></es>
+            <pt><![CDATA[Texto opcional apresentado acima do formulário de livre resolução. Se estiver vazio, é apresentado o texto predefinido da chave de tradução <code>control.cancellationForm.intro.default</code>.]]></pt>
+            <fr><![CDATA[Texte facultatif affiché au-dessus du formulaire de rétractation. S’il est vide, le texte par défaut de la clé de traduction <code>control.cancellationForm.intro.default</code> est affiché.]]></fr>
+            <it><![CDATA[Testo facoltativo visualizzato sopra il modulo di recesso. Se vuoto, viene mostrato il testo predefinito della chiave di traduzione <code>control.cancellationForm.intro.default</code>.]]></it>
+            <pl><![CDATA[Opcjonalny tekst wyświetlany nad formularzem odstąpienia od umowy. Jeśli jest pusty, wyświetlany jest domyślny tekst z klucza tłumaczenia <code>control.cancellationForm.intro.default</code>.]]></pl>
         </locale>
         <locale name="settings.frontend.successText.title">
             <de><![CDATA[Erfolgsmeldung]]></de>
             <en><![CDATA[Success message]]></en>
+            <es><![CDATA[Mensaje de confirmación]]></es>
+            <pt><![CDATA[Mensagem de confirmação]]></pt>
+            <fr><![CDATA[Message de confirmation]]></fr>
+            <it><![CDATA[Messaggio di conferma]]></it>
+            <pl><![CDATA[Komunikat potwierdzający]]></pl>
         </locale>
         <locale name="settings.frontend.successText.description">
             <de><![CDATA[Optionaler Text, der nach erfolgreichem Versand angezeigt wird. Wenn leer, wird im Frontend der Default-Text aus der Locale <code>control.cancellationForm.success</code> angezeigt.]]></de>
-            <en><![CDATA[Optional text displayed after a successful submission.]]></en>
+            <en><![CDATA[Optional text displayed after a successful submission. If empty, the default text from the locale key <code>control.cancellationForm.success</code> is displayed in the frontend.]]></en>
+            <es><![CDATA[Texto opcional que se muestra tras enviar el formulario correctamente. Si está vacío, se muestra el texto predeterminado de la clave de traducción <code>control.cancellationForm.success</code>.]]></es>
+            <pt><![CDATA[Texto opcional apresentado após o envio bem-sucedido do formulário. Se estiver vazio, é apresentado o texto predefinido da chave de tradução <code>control.cancellationForm.success</code>.]]></pt>
+            <fr><![CDATA[Texte facultatif affiché après l’envoi réussi du formulaire. S’il est vide, le texte par défaut de la clé de traduction <code>control.cancellationForm.success</code> est affiché.]]></fr>
+            <it><![CDATA[Testo facoltativo visualizzato dopo l’invio riuscito del modulo. Se vuoto, viene mostrato il testo predefinito della chiave di traduzione <code>control.cancellationForm.success</code>.]]></it>
+            <pl><![CDATA[Opcjonalny tekst wyświetlany po pomyślnym wysłaniu formularza. Jeśli jest pusty, wyświetlany jest domyślny tekst z klucza tłumaczenia <code>control.cancellationForm.success</code>.]]></pl>
         </locale>
 
         <locale name="ordering.step.checkout.checkoutAcceptText">
@@ -86,169 +190,384 @@
                 Ich habe die [terms_and_conditions] und die [revocation] gelesen und akzeptiere sie.
             ]]></de>
             <en><![CDATA[
-                I have read the [terms_and_conditions] and the [revocation] and accept it.
+                I have read the [terms_and_conditions] and the [revocation] and accept them.
             ]]></en>
+            <es><![CDATA[
+                He leído y acepto [terms_and_conditions] y [revocation].
+            ]]></es>
+            <pt><![CDATA[
+                Li e aceito [terms_and_conditions] e [revocation].
+            ]]></pt>
+            <fr><![CDATA[
+                J’ai lu et j’accepte [terms_and_conditions] et [revocation].
+            ]]></fr>
+            <it><![CDATA[
+                Ho letto e accetto [terms_and_conditions] e [revocation].
+            ]]></it>
+            <pl><![CDATA[
+                Potwierdzam zapoznanie się z dokumentami „[terms_and_conditions]” i „[revocation]” oraz akceptuję ich treść.
+            ]]></pl>
         </locale>
         <locale name="frontendUsers.order.footer.cancellationForm.label">
             <de><![CDATA[Widerrufsformular]]></de>
             <en><![CDATA[Cancellation form]]></en>
+            <es><![CDATA[Formulario de desistimiento]]></es>
+            <pt><![CDATA[Formulário de livre resolução]]></pt>
+            <fr><![CDATA[Formulaire de rétractation]]></fr>
+            <it><![CDATA[Modulo di recesso]]></it>
+            <pl><![CDATA[Formularz odstąpienia od umowy]]></pl>
         </locale>
         <locale name="frontendUsers.order.footer.cancellationForm.link">
             <de><![CDATA[Zum Widerrufsformular]]></de>
             <en><![CDATA[Go to cancellation form]]></en>
+            <es><![CDATA[Ir al formulario de desistimiento]]></es>
+            <pt><![CDATA[Ir para o formulário de livre resolução]]></pt>
+            <fr><![CDATA[Accéder au formulaire de rétractation]]></fr>
+            <it><![CDATA[Vai al modulo di recesso]]></it>
+            <pl><![CDATA[Przejdź do formularza odstąpienia od umowy]]></pl>
         </locale>
 
         <locale name="control.cancellationForm.intro.default" html="1">
             <de><![CDATA[<p>Bitte füllen Sie das Formular vollständig aus, damit wir Ihren Widerruf schnell bearbeiten können.</p>]]></de>
             <en><![CDATA[<p>Please fill out the form completely so we can process your cancellation request quickly.</p>]]></en>
+            <es><![CDATA[<p>Rellene todos los campos del formulario para que podamos tramitar su desistimiento con rapidez.</p>]]></es>
+            <pt><![CDATA[<p>Preencha o formulário na íntegra para que possamos tratar rapidamente o seu pedido de livre resolução.</p>]]></pt>
+            <fr><![CDATA[<p>Veuillez remplir l’ensemble du formulaire afin que nous puissions traiter rapidement votre rétractation.</p>]]></fr>
+            <it><![CDATA[<p>Compila il modulo in tutte le sue parti per consentirci di gestire rapidamente il tuo recesso.</p>]]></it>
+            <pl><![CDATA[<p>Wypełnij cały formularz, abyśmy mogli szybko zająć się Twoim odstąpieniem od umowy.</p>]]></pl>
         </locale>
         <locale name="control.cancellationForm.success" html="1">
             <de><![CDATA[<p>Ihre Widerrufsanfrage ist bei uns eingegangen. Wir prüfen den Vorgang zeitnah und melden uns bei Bedarf per E-Mail bei Ihnen.</p>]]></de>
             <en><![CDATA[<p>Your cancellation request has been received. We will review it promptly and contact you by email if needed.</p>]]></en>
+            <es><![CDATA[<p>Hemos recibido su solicitud de desistimiento. La revisaremos lo antes posible y, si es necesario, nos pondremos en contacto con usted por correo electrónico.</p>]]></es>
+            <pt><![CDATA[<p>Recebemos o seu pedido de livre resolução. Iremos analisá-lo em breve e, se necessário, entraremos em contacto por email.</p>]]></pt>
+            <fr><![CDATA[<p>Nous avons reçu votre demande de rétractation. Nous l’examinerons rapidement et vous contacterons par e-mail si nécessaire.</p>]]></fr>
+            <it><![CDATA[<p>Abbiamo ricevuto la tua richiesta di recesso. La esamineremo al più presto e, se necessario, ti contatteremo via email.</p>]]></it>
+            <pl><![CDATA[<p>Otrzymaliśmy Twoje zgłoszenie odstąpienia od umowy. Wkrótce je przeanalizujemy i w razie potrzeby skontaktujemy się z Tobą e-mailem.</p>]]></pl>
         </locale>
         <locale name="control.cancellationForm.success.badge">
             <de><![CDATA[Widerruf eingegangen]]></de>
             <en><![CDATA[Cancellation request received]]></en>
+            <es><![CDATA[Desistimiento recibido]]></es>
+            <pt><![CDATA[Pedido de livre resolução recebido]]></pt>
+            <fr><![CDATA[Demande de rétractation reçue]]></fr>
+            <it><![CDATA[Richiesta di recesso ricevuta]]></it>
+            <pl><![CDATA[Otrzymano zgłoszenie odstąpienia od umowy]]></pl>
         </locale>
         <locale name="control.cancellationForm.success.headline">
             <de><![CDATA[Vielen Dank. Wir kümmern uns jetzt um Ihre Anfrage.]]></de>
             <en><![CDATA[Thank you. We are now taking care of your request.]]></en>
+            <es><![CDATA[Gracias. Nos estamos ocupando de su solicitud.]]></es>
+            <pt><![CDATA[Obrigado. Estamos a tratar do seu pedido.]]></pt>
+            <fr><![CDATA[Merci. Nous prenons en charge votre demande.]]></fr>
+            <it><![CDATA[Grazie. Stiamo gestendo la tua richiesta.]]></it>
+            <pl><![CDATA[Dziękujemy. Zajmujemy się już Twoim zgłoszeniem.]]></pl>
         </locale>
         <locale name="control.cancellationForm.success.hint">
             <de><![CDATA[Wenn Sie möchten, können Sie jetzt direkt weiter navigieren.]]></de>
             <en><![CDATA[If you like, you can continue directly from here.]]></en>
+            <es><![CDATA[Si lo desea, puede seguir navegando.]]></es>
+            <pt><![CDATA[Se desejar, pode continuar a navegar.]]></pt>
+            <fr><![CDATA[Vous pouvez poursuivre votre navigation si vous le souhaitez.]]></fr>
+            <it><![CDATA[Se lo desideri, puoi continuare a navigare.]]></it>
+            <pl><![CDATA[Jeśli chcesz, możesz teraz kontynuować przeglądanie.]]></pl>
         </locale>
         <locale name="control.cancellationForm.success.actionsLabel">
             <de><![CDATA[Weiter zu]]></de>
             <en><![CDATA[Continue to]]></en>
+            <es><![CDATA[Ir a]]></es>
+            <pt><![CDATA[Ir para]]></pt>
+            <fr><![CDATA[Accéder à]]></fr>
+            <it><![CDATA[Vai a]]></it>
+            <pl><![CDATA[Przejdź do]]></pl>
         </locale>
         <locale name="control.cancellationForm.success.link.start">
             <de><![CDATA[Startseite]]></de>
             <en><![CDATA[Go to homepage]]></en>
+            <es><![CDATA[Página de inicio]]></es>
+            <pt><![CDATA[Página inicial]]></pt>
+            <fr><![CDATA[Page d’accueil]]></fr>
+            <it><![CDATA[Pagina iniziale]]></it>
+            <pl><![CDATA[Strona główna]]></pl>
         </locale>
         <locale name="control.cancellationForm.success.link.profile">
             <de><![CDATA[Mein Profil]]></de>
             <en><![CDATA[Go to profile]]></en>
+            <es><![CDATA[Mi perfil]]></es>
+            <pt><![CDATA[O meu perfil]]></pt>
+            <fr><![CDATA[Mon profil]]></fr>
+            <it><![CDATA[Il mio profilo]]></it>
+            <pl><![CDATA[Mój profil]]></pl>
         </locale>
         <locale name="frontend.cancellationForm.introText" html="1">
             <de><![CDATA[]]></de>
             <en><![CDATA[]]></en>
+            <es><![CDATA[]]></es>
+            <pt><![CDATA[]]></pt>
+            <fr><![CDATA[]]></fr>
+            <it><![CDATA[]]></it>
+            <pl><![CDATA[]]></pl>
         </locale>
         <locale name="frontend.cancellationForm.successText" html="1">
             <de><![CDATA[]]></de>
             <en><![CDATA[]]></en>
+            <es><![CDATA[]]></es>
+            <pt><![CDATA[]]></pt>
+            <fr><![CDATA[]]></fr>
+            <it><![CDATA[]]></it>
+            <pl><![CDATA[]]></pl>
         </locale>
         <locale name="control.cancellationForm.mail.subject">
             <de><![CDATA[Neue Widerrufsanfrage]]></de>
             <en><![CDATA[New cancellation request]]></en>
+            <es><![CDATA[Nueva solicitud de desistimiento]]></es>
+            <pt><![CDATA[Novo pedido de livre resolução]]></pt>
+            <fr><![CDATA[Nouvelle demande de rétractation]]></fr>
+            <it><![CDATA[Nuova richiesta di recesso]]></it>
+            <pl><![CDATA[Nowe zgłoszenie odstąpienia od umowy]]></pl>
         </locale>
         <locale name="control.cancellationForm.firstName">
             <de><![CDATA[Vorname]]></de>
             <en><![CDATA[First name]]></en>
+            <es><![CDATA[Nombre]]></es>
+            <pt><![CDATA[Nome próprio]]></pt>
+            <fr><![CDATA[Prénom]]></fr>
+            <it><![CDATA[Nome]]></it>
+            <pl><![CDATA[Imię]]></pl>
         </locale>
         <locale name="control.cancellationForm.lastName">
             <de><![CDATA[Nachname]]></de>
             <en><![CDATA[Last name]]></en>
+            <es><![CDATA[Apellidos]]></es>
+            <pt><![CDATA[Apelido]]></pt>
+            <fr><![CDATA[Nom]]></fr>
+            <it><![CDATA[Cognome]]></it>
+            <pl><![CDATA[Nazwisko]]></pl>
         </locale>
         <locale name="control.cancellationForm.email">
             <de><![CDATA[E-Mail]]></de>
             <en><![CDATA[Email]]></en>
+            <es><![CDATA[Correo electrónico]]></es>
+            <pt><![CDATA[Email]]></pt>
+            <fr><![CDATA[E-mail]]></fr>
+            <it><![CDATA[Email]]></it>
+            <pl><![CDATA[E-mail]]></pl>
         </locale>
         <locale name="control.cancellationForm.phone">
             <de><![CDATA[Telefon]]></de>
             <en><![CDATA[Phone]]></en>
+            <es><![CDATA[Teléfono]]></es>
+            <pt><![CDATA[Telefone]]></pt>
+            <fr><![CDATA[Téléphone]]></fr>
+            <it><![CDATA[Telefono]]></it>
+            <pl><![CDATA[Telefon]]></pl>
         </locale>
         <locale name="control.cancellationForm.orderNo">
             <de><![CDATA[Bestellnummer]]></de>
             <en><![CDATA[Order number]]></en>
+            <es><![CDATA[Número de pedido]]></es>
+            <pt><![CDATA[Número da encomenda]]></pt>
+            <fr><![CDATA[Numéro de commande]]></fr>
+            <it><![CDATA[Numero d’ordine]]></it>
+            <pl><![CDATA[Numer zamówienia]]></pl>
         </locale>
         <locale name="control.cancellationForm.orderDate">
             <de><![CDATA[Bestelldatum]]></de>
             <en><![CDATA[Order date]]></en>
+            <es><![CDATA[Fecha del pedido]]></es>
+            <pt><![CDATA[Data da encomenda]]></pt>
+            <fr><![CDATA[Date de commande]]></fr>
+            <it><![CDATA[Data dell’ordine]]></it>
+            <pl><![CDATA[Data zamówienia]]></pl>
         </locale>
         <locale name="control.cancellationForm.message">
             <de><![CDATA[Nachricht]]></de>
             <en><![CDATA[Message]]></en>
+            <es><![CDATA[Mensaje]]></es>
+            <pt><![CDATA[Mensagem]]></pt>
+            <fr><![CDATA[Message]]></fr>
+            <it><![CDATA[Messaggio]]></it>
+            <pl><![CDATA[Wiadomość]]></pl>
         </locale>
         <locale name="control.cancellationForm.message.placeholder">
             <de><![CDATA[Bitte beschreiben Sie kurz Ihren Widerruf oder Ihr Anliegen.]]></de>
             <en><![CDATA[Please briefly describe your cancellation request or concern.]]></en>
+            <es><![CDATA[Describa brevemente su solicitud de desistimiento o el motivo de su consulta.]]></es>
+            <pt><![CDATA[Descreva brevemente o seu pedido de livre resolução ou o assunto que pretende tratar.]]></pt>
+            <fr><![CDATA[Décrivez brièvement votre demande de rétractation ou l’objet de votre message.]]></fr>
+            <it><![CDATA[Descrivi brevemente la tua richiesta di recesso o il motivo del contatto.]]></it>
+            <pl><![CDATA[Krótko opisz swoje odstąpienie od umowy lub sprawę, z którą się zwracasz.]]></pl>
         </locale>
         <locale name="control.cancellationForm.captcha">
             <de><![CDATA[CAPTCHA]]></de>
             <en><![CDATA[CAPTCHA]]></en>
+            <es><![CDATA[CAPTCHA]]></es>
+            <pt><![CDATA[CAPTCHA]]></pt>
+            <fr><![CDATA[CAPTCHA]]></fr>
+            <it><![CDATA[CAPTCHA]]></it>
+            <pl><![CDATA[CAPTCHA]]></pl>
         </locale>
         <locale name="control.cancellationForm.submit">
             <de><![CDATA[Widerruf absenden]]></de>
             <en><![CDATA[Submit cancellation]]></en>
+            <es><![CDATA[Enviar desistimiento]]></es>
+            <pt><![CDATA[Enviar pedido de livre resolução]]></pt>
+            <fr><![CDATA[Envoyer la rétractation]]></fr>
+            <it><![CDATA[Invia recesso]]></it>
+            <pl><![CDATA[Wyślij odstąpienie od umowy]]></pl>
         </locale>
         <locale name="control.cancellationForm.privacyPolicy.label" html="1">
             <de><![CDATA[Ich habe die [privacyPolicyLink] gelesen und akzeptiere sie.]]></de>
             <en><![CDATA[I have read and accept the [privacyPolicyLink].]]></en>
+            <es><![CDATA[He leído y acepto [privacyPolicyLink].]]></es>
+            <pt><![CDATA[Li e aceito [privacyPolicyLink].]]></pt>
+            <fr><![CDATA[J’ai lu et j’accepte [privacyPolicyLink].]]></fr>
+            <it><![CDATA[Ho letto e accetto [privacyPolicyLink].]]></it>
+            <pl><![CDATA[Potwierdzam zapoznanie się z dokumentem „[privacyPolicyLink]” i akceptuję jego treść.]]></pl>
         </locale>
         <locale name="control.cancellationForm.privacyPolicy.labelWithoutLink">
             <de><![CDATA[Ich habe die Datenschutzerklärung gelesen und akzeptiere sie.]]></de>
             <en><![CDATA[I have read and accept the privacy policy.]]></en>
+            <es><![CDATA[He leído y acepto la política de privacidad.]]></es>
+            <pt><![CDATA[Li e aceito a política de privacidade.]]></pt>
+            <fr><![CDATA[J’ai lu et j’accepte la politique de confidentialité.]]></fr>
+            <it><![CDATA[Ho letto e accetto l’informativa sulla privacy.]]></it>
+            <pl><![CDATA[Potwierdzam zapoznanie się z polityką prywatności i akceptuję jej treść.]]></pl>
         </locale>
         <locale name="control.cancellationForm.error.requiredField">
             <de><![CDATA[Bitte füllen Sie das Feld „[field]“ aus.]]></de>
             <en><![CDATA[Please fill in the “[field]” field.]]></en>
+            <es><![CDATA[Rellene el campo «[field]».]]></es>
+            <pt><![CDATA[Preencha o campo «[field]».]]></pt>
+            <fr><![CDATA[Veuillez remplir le champ « [field] ».]]></fr>
+            <it><![CDATA[Compila il campo «[field]».]]></it>
+            <pl><![CDATA[Wypełnij pole „[field]”.]]></pl>
         </locale>
         <locale name="control.cancellationForm.error.invalidEmail">
             <de><![CDATA[Bitte geben Sie eine gültige E-Mail-Adresse ein.]]></de>
             <en><![CDATA[Please enter a valid email address.]]></en>
+            <es><![CDATA[Introduzca una dirección de correo electrónico válida.]]></es>
+            <pt><![CDATA[Introduza um endereço de email válido.]]></pt>
+            <fr><![CDATA[Veuillez saisir une adresse e-mail valide.]]></fr>
+            <it><![CDATA[Inserisci un indirizzo email valido.]]></it>
+            <pl><![CDATA[Podaj prawidłowy adres e-mail.]]></pl>
         </locale>
         <locale name="control.cancellationForm.error.invalidOrderDate">
             <de><![CDATA[Bitte geben Sie ein gültiges Bestelldatum ein.]]></de>
             <en><![CDATA[Please enter a valid order date.]]></en>
+            <es><![CDATA[Introduzca una fecha de pedido válida.]]></es>
+            <pt><![CDATA[Introduza uma data de encomenda válida.]]></pt>
+            <fr><![CDATA[Veuillez saisir une date de commande valide.]]></fr>
+            <it><![CDATA[Inserisci una data dell’ordine valida.]]></it>
+            <pl><![CDATA[Podaj prawidłową datę zamówienia.]]></pl>
         </locale>
         <locale name="control.cancellationForm.error.fieldTooLong">
             <de><![CDATA[Das Feld „[field]“ darf maximal [max] Zeichen lang sein.]]></de>
             <en><![CDATA[The “[field]” field may contain a maximum of [max] characters.]]></en>
+            <es><![CDATA[El campo «[field]» no puede contener más de [max] caracteres.]]></es>
+            <pt><![CDATA[O campo «[field]» não pode conter mais de [max] carateres.]]></pt>
+            <fr><![CDATA[Le champ « [field] » ne peut pas contenir plus de [max] caractères.]]></fr>
+            <it><![CDATA[Il campo «[field]» può contenere al massimo [max] caratteri.]]></it>
+            <pl><![CDATA[Pole „[field]” może zawierać maksymalnie [max] znaków.]]></pl>
         </locale>
         <locale name="control.cancellationForm.error.privacyPolicyRequired">
             <de><![CDATA[Bitte bestätigen Sie die Datenschutzerklärung.]]></de>
             <en><![CDATA[Please confirm the privacy policy.]]></en>
+            <es><![CDATA[Confirme que acepta la política de privacidad.]]></es>
+            <pt><![CDATA[Confirme que aceita a política de privacidade.]]></pt>
+            <fr><![CDATA[Veuillez confirmer votre acceptation de la politique de confidentialité.]]></fr>
+            <it><![CDATA[Conferma l’accettazione dell’informativa sulla privacy.]]></it>
+            <pl><![CDATA[Potwierdź akceptację polityki prywatności.]]></pl>
         </locale>
         <locale name="control.cancellationForm.error.captcha">
             <de><![CDATA[Die CAPTCHA-Prüfung ist fehlgeschlagen. Bitte versuchen Sie es erneut.]]></de>
             <en><![CDATA[The CAPTCHA verification failed. Please try again.]]></en>
+            <es><![CDATA[La verificación CAPTCHA ha fallado. Inténtelo de nuevo.]]></es>
+            <pt><![CDATA[A verificação CAPTCHA falhou. Tente novamente.]]></pt>
+            <fr><![CDATA[La vérification CAPTCHA a échoué. Veuillez réessayer.]]></fr>
+            <it><![CDATA[La verifica CAPTCHA non è riuscita. Riprova.]]></it>
+            <pl><![CDATA[Weryfikacja CAPTCHA nie powiodła się. Spróbuj ponownie.]]></pl>
         </locale>
         <locale name="control.cancellationForm.error.server">
             <de><![CDATA[Die Anfrage konnte nicht verarbeitet werden. Bitte versuchen Sie es später erneut.]]></de>
             <en><![CDATA[The request could not be processed. Please try again later.]]></en>
+            <es><![CDATA[No se ha podido procesar la solicitud. Inténtelo de nuevo más tarde.]]></es>
+            <pt><![CDATA[Não foi possível processar o pedido. Tente novamente mais tarde.]]></pt>
+            <fr><![CDATA[La demande n’a pas pu être traitée. Veuillez réessayer plus tard.]]></fr>
+            <it><![CDATA[Impossibile elaborare la richiesta. Riprova più tardi.]]></it>
+            <pl><![CDATA[Nie udało się przetworzyć zgłoszenia. Spróbuj ponownie później.]]></pl>
         </locale>
         <locale name="control.cancellationForm.mail.label.firstName">
             <de><![CDATA[Vorname]]></de>
             <en><![CDATA[First name]]></en>
+            <es><![CDATA[Nombre]]></es>
+            <pt><![CDATA[Nome próprio]]></pt>
+            <fr><![CDATA[Prénom]]></fr>
+            <it><![CDATA[Nome]]></it>
+            <pl><![CDATA[Imię]]></pl>
         </locale>
         <locale name="control.cancellationForm.mail.label.lastName">
             <de><![CDATA[Nachname]]></de>
             <en><![CDATA[Last name]]></en>
+            <es><![CDATA[Apellidos]]></es>
+            <pt><![CDATA[Apelido]]></pt>
+            <fr><![CDATA[Nom]]></fr>
+            <it><![CDATA[Cognome]]></it>
+            <pl><![CDATA[Nazwisko]]></pl>
         </locale>
         <locale name="control.cancellationForm.mail.label.email">
             <de><![CDATA[E-Mail]]></de>
             <en><![CDATA[Email]]></en>
+            <es><![CDATA[Correo electrónico]]></es>
+            <pt><![CDATA[Email]]></pt>
+            <fr><![CDATA[E-mail]]></fr>
+            <it><![CDATA[Email]]></it>
+            <pl><![CDATA[E-mail]]></pl>
         </locale>
         <locale name="control.cancellationForm.mail.label.phone">
             <de><![CDATA[Telefon]]></de>
             <en><![CDATA[Phone]]></en>
+            <es><![CDATA[Teléfono]]></es>
+            <pt><![CDATA[Telefone]]></pt>
+            <fr><![CDATA[Téléphone]]></fr>
+            <it><![CDATA[Telefono]]></it>
+            <pl><![CDATA[Telefon]]></pl>
         </locale>
         <locale name="control.cancellationForm.mail.label.orderNo">
             <de><![CDATA[Bestellnummer]]></de>
             <en><![CDATA[Order number]]></en>
+            <es><![CDATA[Número de pedido]]></es>
+            <pt><![CDATA[Número da encomenda]]></pt>
+            <fr><![CDATA[Numéro de commande]]></fr>
+            <it><![CDATA[Numero d’ordine]]></it>
+            <pl><![CDATA[Numer zamówienia]]></pl>
         </locale>
         <locale name="control.cancellationForm.mail.label.orderDate">
             <de><![CDATA[Bestelldatum]]></de>
             <en><![CDATA[Order date]]></en>
+            <es><![CDATA[Fecha del pedido]]></es>
+            <pt><![CDATA[Data da encomenda]]></pt>
+            <fr><![CDATA[Date de commande]]></fr>
+            <it><![CDATA[Data dell’ordine]]></it>
+            <pl><![CDATA[Data zamówienia]]></pl>
         </locale>
         <locale name="control.cancellationForm.mail.label.message">
             <de><![CDATA[Nachricht]]></de>
             <en><![CDATA[Message]]></en>
+            <es><![CDATA[Mensaje]]></es>
+            <pt><![CDATA[Mensagem]]></pt>
+            <fr><![CDATA[Message]]></fr>
+            <it><![CDATA[Messaggio]]></it>
+            <pl><![CDATA[Wiadomość]]></pl>
         </locale>
         <locale name="control.cancellationForm.mail.privacyPolicyAccepted">
             <de><![CDATA[Die Datenschutzerklärung wurde bestätigt.]]></de>
             <en><![CDATA[The privacy policy was accepted.]]></en>
+            <es><![CDATA[Se ha aceptado la política de privacidad.]]></es>
+            <pt><![CDATA[A política de privacidade foi aceite.]]></pt>
+            <fr><![CDATA[La politique de confidentialité a été acceptée.]]></fr>
+            <it><![CDATA[L’informativa sulla privacy è stata accettata.]]></it>
+            <pl><![CDATA[Zaakceptowano politykę prywatności.]]></pl>
         </locale>
     </groups>
 
